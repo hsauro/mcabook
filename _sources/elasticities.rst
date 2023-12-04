@@ -28,3 +28,28 @@ A more complex version:
 .. tikz:: An Example Directive with Caption
    \draw[thick,rounded corners=8pt]
    (0,0)--(0,2)--(1,3.25)--(2,2)--(2,0)--(0,2)--(2,2)--(0,0)--(2,0);
+
+.. execute_code::
+
+    print ('This should not print the example code')
+
+.. execute_code::
+   :hide_code:
+   :hide_headers:
+
+   foo = 32
+   print ('This will hide the Code and Results text - and foo is %d' % foo)
+
+
+.. execute_code::
+   :hide_code:
+   :hide_headers:
+
+   print ("Running a simulation") 
+
+.. plot::
+
+   import tellurium as te
+   r = te.loada ('''A -> B; k1*A; k1=0.1; A = 10''')
+   m = r.simulate (0, 40, 100)
+   r.plot()
