@@ -31,7 +31,9 @@ A more complex version:
 
 .. execute_code::
 
-    print ('This should not print the example code')
+    a = [1,2,3]
+    b = [4,5,6]
+    print ('Printing a list: ', a + b)
 
 .. execute_code::
    :hide_code:
@@ -40,16 +42,13 @@ A more complex version:
    foo = 32
    print ('This will hide the Code and Results text - and foo is %d' % foo)
 
-
-.. execute_code::
-   :hide_code:
-   :hide_headers:
-
-   print ("Running a simulation") 
+Running a simulation
 
 .. plot::
+   :include-source:
 
    import tellurium as te
    r = te.loada ('''A -> B; k1*A; k1=0.1; A = 10''')
    m = r.simulate (0, 40, 100)
    r.plot()
+

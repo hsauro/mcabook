@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Introduction &#8212; Mcabook 0.1 documentation</title>
+    <title>Introduction &#8212; MCA Book v0.1</title>
   
   
   
@@ -42,6 +42,7 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -129,7 +130,7 @@
   
   
   
-    <p class="title logo__title">Mcabook 0.1 documentation</p>
+    <p class="title logo__title">MCA Book v0.1</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -263,7 +264,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -279,6 +282,37 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biochemical-systems">Biochemical systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-a-system-as-a-mathematical-model">Describing a system as a mathematical model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-mathematical-model">Building a mathematical model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-rate-laws-to-a-mathematical-model">Adding rate laws to a mathematical model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-a-simulation">Running a simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-steady-state">The steady-state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-steady-state">Calculating the steady-state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bigger-pathways">Bigger pathways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changes-to-the-steady-state">Changes to the steady-state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-enzyme-levels">Changing enzyme levels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-influence">Measuring influence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-of-units">The problem of units</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-of-the-delta">The problem of the delta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-real-example">A real example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-at-a-simpler-example">Looking at a simpler example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summation-of-control-coefficients">Summation of Control Coefficients</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-when-we-change-an-enzyme">What happens when we change an enzyme?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-disturbances-spread-out">How do disturbances spread out?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-multiple-changes">Dealing with multiple changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbations-at-the-first-and-last-step">Perturbations at the first and last step</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reactant-and-product-elasticities">Reactant and product elasticities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-negative-feedback">Effect of negative feedback</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-the-effect-of-negative-feedback">Summary of the effect of negative feedback</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -290,6 +324,386 @@ document.write(`
                   
   <section id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
+<section id="biochemical-systems">
+<h2>Biochemical systems<a class="headerlink" href="#biochemical-systems" title="Permalink to this heading">#</a></h2>
+<p>A biochemical system is a series of linked chemical reactions, often enzyme catalyzed. For example:</p>
+<div class="math notranslate nohighlight">
+\[\begin{eqnarray*}
+S_1 \stackrel{v_1}{\rightarrow} S_2 \stackrel{v_2}{\rightarrow} S_3
+\end{eqnarray*}\]</div>
+<p><span class="math notranslate nohighlight">\(S_1, S_2,\)</span> and <span class="math notranslate nohighlight">\(S_3\)</span> are the names of the chemical species and <span class="math notranslate nohighlight">\(v_1\)</span> and <span class="math notranslate nohighlight">\(v_2\)</span> are the reaction rates. This reaction schemem describes the conversion of <span class="math notranslate nohighlight">\(S_1\)</span> to <span class="math notranslate nohighlight">\(S_2\)</span> and <span class="math notranslate nohighlight">\(S_2\)</span> to <span class="math notranslate nohighlight">\(S_3\)</span></p>
+</section>
+<section id="describing-a-system-as-a-mathematical-model">
+<h2>Describing a system as a mathematical model<a class="headerlink" href="#describing-a-system-as-a-mathematical-model" title="Permalink to this heading">#</a></h2>
+<p>A biochemical system can be described using a series of differential equations. There will be one differential equation per chemical species.</p>
+<p>The rate of change of a given species is governed by the rate at which the species is being made minus the rate at which it is being consumed:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dS}{dt} = \text{In rate} - \text{Out rate} = \text{Production} - \text{Consumption}\]</div>
+<p>How do we describe the ‘in’ and ‘out’ rates?</p>
+<p>The simplest is to assume mass-action kinetics, where the rate is proportional to the concentration of species.</p>
+<p>For example, consider <span class="math notranslate nohighlight">\(S_1 \rightarrow S_2\)</span> with a rate <span class="math notranslate nohighlight">\(v\)</span>, then, using mass-action kinetics we can describe the rate as <span class="math notranslate nohighlight">\(v = k_1 S_1\)</span>, where <span class="math notranslate nohighlight">\(k_1\)</span> is the rate constant.</p>
+</section>
+<section id="building-a-mathematical-model">
+<h2>Building a mathematical model<a class="headerlink" href="#building-a-mathematical-model" title="Permalink to this heading">#</a></h2>
+<p>A mathematical model for the system:</p>
+<div class="math notranslate nohighlight">
+\[S_1 \stackrel{v_1}{\rightarrow} S_2 \stackrel{v_2}{\rightarrow} S_3\]</div>
+<p>can be described using three differential equations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{eqnarray*}
+  \frac{dS_1}{dt} &amp;=&amp; -v_1 \\[6pt]
+  \frac{dS_2}{dt} &amp;=&amp; v_1 - v_2 \\[6pt]
+  \frac{dS_3}{dt} &amp;=&amp; v_2
+\end{eqnarray*}\end{split}\]</div>
+<p>Each differential equation describes a specific species. In this case there are three species, so there are three differential equations.</p>
+<p>Each differential equation describes the difference between production and consumption rates for its assigned species.</p>
+<p>For example, the differential equation for <span class="math notranslate nohighlight">\(S_2\)</span>, has two terms, one term that describes the production rate, <span class="math notranslate nohighlight">\(v_1\)</span> and a second that describes the consumption rate <span class="math notranslate nohighlight">\(v_2\)</span>.</p>
+<p>Notice that the consumption rate is negative because <span class="math notranslate nohighlight">\(S_2\)</span> is being used up by <span class="math notranslate nohighlight">\(v_2\)</span>.</p>
+<p>The last differential equation only has one term <span class="math notranslate nohighlight">\(v_2\)</span>. That’s because in the model, <span class="math notranslate nohighlight">\(S_3\)</span> is only being produced, it has no consumption step.</p>
+<p>Notice also that the production rate, <span class="math notranslate nohighlight">\(v_3\)</span> is positive since <span class="math notranslate nohighlight">\(S_3\)</span> is being produced. Contrast this to the first differential equation for <span class="math notranslate nohighlight">\(S_1\)</span>.</p>
+</section>
+<section id="adding-rate-laws-to-a-mathematical-model">
+<h2>Adding rate laws to a mathematical model<a class="headerlink" href="#adding-rate-laws-to-a-mathematical-model" title="Permalink to this heading">#</a></h2>
+<p>Now that we have the basic form for the differential equations, we need to assign mass-action rate laws to each of the reaction rates, <span class="math notranslate nohighlight">\(v_1\)</span>, and <span class="math notranslate nohighlight">\(v_2\)</span>. We can for example use the following:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{eqnarray*}
+  v_1 = k_1 S_1 \\[0pt]
+  v_2 = k_2 S_2
+\end{eqnarray*}\end{split}\]</div>
+<p>These are irreversible mass-action rate laws because the value for the reaction rate, <span class="math notranslate nohighlight">\(v_i\)</span> can only be positive. These rate laws are independent of the concentration of product.</p>
+<p>It would be more realistic to use reversible rate laws. For example, we could replace the first reaction with the reversible reaction:</p>
+<div class="math notranslate nohighlight">
+\[S_1 \stackrel{v_1}{\rightleftharpoons} S_2\]</div>
+<p>the rate laws can be given by the more complicated expression:</p>
+<div class="math notranslate nohighlight">
+\[v_1 = k_1 S_1 - k_2 S_2\]</div>
+<p>Such a rate laws can be positive or negative depending on the relative concentration of reactant and product.</p>
+<p>Using reversible rate laws we can write a more realistic mathematical model for our system as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{eqnarray*}
+  \frac{dS_1}{dt} &amp;=&amp; -(k_1 S_1 - k_2 S_2) \\[4pt]
+  \frac{dS_2}{dt} &amp;=&amp; (k_1 S_1 - k_2 S_2) - (k_3 S_2 - k_4 S_3) \\[4pt]
+  \frac{dS_3}{dt} &amp;=&amp; k_3 S_2 - k_4 S_3
+\end{eqnarray*}\end{split}\]</div>
+</section>
+<section id="running-a-simulation">
+<h2>Running a simulation<a class="headerlink" href="#running-a-simulation" title="Permalink to this heading">#</a></h2>
+<p>The differential equations in the last box can be solved on a computer when given values for the parameters and some initial conditions to <span class="math notranslate nohighlight">\(S_1, S_2\)</span> and <span class="math notranslate nohighlight">\(S_3\)</span>.</p>
+<p>The figure below was generate by the model shown in the Python code using the Tellurium package.</p>
+<p>In the graph plots the concentrations of <span class="math notranslate nohighlight">\(S_1, S_2\)</span>, and <span class="math notranslate nohighlight">\(S_3\)</span> versus time.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tellurium</span> <span class="k">as</span> <span class="nn">te</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">te</span><span class="o">.</span><span class="n">loada</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">   S1 -&gt; S2; k1*S1 - k2*S2</span>
+<span class="s2">   S2 -&gt; S3; k3*S2 - k4*S3</span>
+
+<span class="s2">   k1 = 0.34; k2 = 0.23</span>
+<span class="s2">   k3 = 0.45; k4 = 0.23</span>
+<span class="s2">   S1 = 10</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">r</span><span class="o">.</span><span class="n">simulate</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xtitle</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span> <span class="n">ytitle</span><span class="o">=</span><span class="s1">&#39;Concentration&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(<a class="reference download internal" download="" href="_downloads/41edb80dbfa59bb1144b9289003c9df6/intro-1.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="_downloads/9aef6ed4884fe673893e382a98601e8e/intro-1.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="_downloads/222c845b1a631534c3bc36d9b8059cb3/intro-1.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="_downloads/c18d8805e0ef6b22b833fea547aa2d57/intro-1.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="_images/intro-1.png" class="plot-directive" src="_images/intro-1.png" />
+</figure>
+<p>The plot shows us an initial set of transients followed by a leveling off until all concentrations are no longer changing.</p>
+<p>Using the same model as in the last box we can plot instead the two rates, $v_1$ and $v_2$. This plot is shown below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tellurium</span> <span class="k">as</span> <span class="nn">te</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">te</span><span class="o">.</span><span class="n">loada</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">  J1: S1 -&gt; S2; k1*S1 - k2*S2</span>
+<span class="s2">  J2: S2 -&gt; S3; k3*S2 - k4*S3</span>
+
+<span class="s2">  k1 = 0.34; k2 = 0.23</span>
+<span class="s2">  k3 = 0.45; k4 = 0.23</span>
+<span class="s2">  S1 = 10</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">r</span><span class="o">.</span><span class="n">simulate</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;J1&#39;</span><span class="p">,</span> <span class="s1">&#39;J2&#39;</span><span class="p">])</span>
+<span class="n">r</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xtitle</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span> <span class="n">ytitle</span><span class="o">=</span><span class="s1">&#39;Concentration&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(<a class="reference download internal" download="" href="_downloads/f89763754836be186fe0969e059c026e/intro-2.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="_downloads/c898b1131cb8ba19d859e1f1f578ec4f/intro-2.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="_downloads/d83c028839d60596b5ca8fd4694cddce/intro-2.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="_downloads/7b2f7c3dfca79506dd7c64aed041d146/intro-2.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="_images/intro-2.png" class="plot-directive" src="_images/intro-2.png" />
+</figure>
+<p>As you can see it looks quite different. Both rates appear to go to zero.</p>
+<p>What has happened is that the system has reached:</p>
+<p class="centered">
+<strong>Thermodynamic equilibrium.</strong></p><p>This state is characterized by unchanging concentrations and all reactions rate equal to zero. We can summarize it by:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dS_i}{dt} = 0;\quad v_i = 0\]</div>
+</section>
+<section id="the-steady-state">
+<h2>The steady-state<a class="headerlink" href="#the-steady-state" title="Permalink to this heading">#</a></h2>
+<p>However, pathways inside cells are rarely if ever at thermodynamic equilibrium. Instead they are, what we call at:</p>
+<p>centerline{bf Steady state.}</p>
+<p>When we are at steady-state the concentrations are unchanging {bf but} but reaction rates are {bf not zero}:</p>
+<div class="math notranslate nohighlight">
+\[\diffdisp{S_i}{t} = 0;\quad v_i \neq 0\]</div>
+<p>In order to mimic a pathway inside a cell we must clamp (i.e fix) the boundaries of the pathway. In this case we would clamp <span class="math notranslate nohighlight">\(S_1\)</span> and <span class="math notranslate nohighlight">\(S_3\)</span> since the are the edges of the pathway.
+This will allow <span class="math notranslate nohighlight">\(S_2\)</span> to reach a steady-state.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tellurium</span> <span class="k">as</span> <span class="nn">te</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">te</span><span class="o">.</span><span class="n">loada</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">  J1: $S1 -&gt; S2; k1*S1 - k2*S2</span>
+<span class="s2">  J2: S2 -&gt; $S3; k3*S2 - k4*S3</span>
+
+<span class="s2">  k1 = 0.34; k2 = 0.23</span>
+<span class="s2">  k3 = 0.45; k4 = 0.23</span>
+<span class="s2">  S1 = 10</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">simulate</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;S1&#39;</span><span class="p">,</span> <span class="s1">&#39;S2&#39;</span><span class="p">,</span> <span class="s1">&#39;S3&#39;</span><span class="p">,</span> <span class="s1">&#39;J1&#39;</span><span class="p">,</span> <span class="s1">&#39;J2&#39;</span><span class="p">])</span>
+<span class="n">r</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xtitle</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span> <span class="n">ytitle</span><span class="o">=</span><span class="s1">&#39;Concentration&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(<a class="reference download internal" download="" href="_downloads/b324cb1ff476cf409ad07e3312dede5a/intro-3.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="_downloads/32ff4a48ec395071556b40a5fa60905e/intro-3.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="_downloads/aaf2671eb8ec0979cbd1e4496b1a37a4/intro-3.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="_downloads/b0dde9b69ef4de5d682a0bfb943309c0/intro-3.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
+<figure class="align-default">
+<img alt="_images/intro-3.png" class="plot-directive" src="_images/intro-3.png" />
+</figure>
+<p>Notice that the two edge (or boundary species), <span class="math notranslate nohighlight">\(S_1\)</span> and <span class="math notranslate nohighlight">\(S_3\)</span>, do not change because we <strong>fixed</strong> them in the simulation.</p>
+<p>But most important, notice that the two rates <span class="math notranslate nohighlight">\(v_1\)</span> and <span class="math notranslate nohighlight">\(v_2\)</span> <strong>converge</strong>. That is, at steady-state:</p>
+<div class="math notranslate nohighlight">
+\[v_1 = v_2\]</div>
+<p>This result applies no matter how long the pathway. At steady-state, with $n$ steps, it will be true that:</p>
+<div class="math notranslate nohighlight">
+\[v_1 = v_2 =\ ...\ = v_n\]</div>
+</section>
+<section id="calculating-the-steady-state">
+<h2>Calculating the steady-state<a class="headerlink" href="#calculating-the-steady-state" title="Permalink to this heading">#</a></h2>
+<p>In the last box we introduced the idea of the steady-state.</p>
+<p>We can also compute the steady-state by setting the differential equations to zero and solving for the concentrations. For example, consider this problem:</p>
+<div class="math notranslate nohighlight">
+\[X_o \stackrel{v_1}{\rightarrow} S_1 \stackrel{v_2}{\rightarrow} X_1\]</div>
+<p>In this example, $X_o$ and $X_1$ are {bf fixed species}, this is to allow <span class="math notranslate nohighlight">\(S_1\)</span> can reach a steady-state. Let’s also keep the reaction rate laws simple:</p>
+<div class="math notranslate nohighlight">
+\[v_1 = k_1 X_o;\quad v_2 = k_2 S_1\]</div>
+<p>Because <span class="math notranslate nohighlight">\(X_o\)</span> and <span class="math notranslate nohighlight">\(X_1\)</span> are fixed, there is only one differential equation for the model:</p>
+<div class="math notranslate nohighlight">
+\[\frac{dS_1}{dt} = v_1 - v_2 = k_1 X_o - k_2 S_1\]</div>
+<p>We can set this to zero and solve for <span class="math notranslate nohighlight">\(S_1\)</span> which gives us:</p>
+<div class="math notranslate nohighlight">
+\[S_1 = \frac{k_1 X_o}{k_2}\]</div>
+<p>This equation lets us compute the steady-state concentration of <span class="math notranslate nohighlight">\(S_1\)</span> without doing any simulation.</p>
+<p>It also tells us something important, that the steady-state concentration of <span class="math notranslate nohighlight">\(S_1\)</span> depends on all three parameters of the system. Note it doesn’t include <span class="math notranslate nohighlight">\(X_1\)</span> because the rate <span class="math notranslate nohighlight">\(v_2\)</span> was irreversible.</p>
+<p>For example, if we increase <span class="math notranslate nohighlight">\(k_2\)</span> the concentration of <span class="math notranslate nohighlight">\(S_1\)</span> will decrease.</p>
+</section>
+<section id="bigger-pathways">
+<h2>Bigger pathways<a class="headerlink" href="#bigger-pathways" title="Permalink to this heading">#</a></h2>
+<p>In the last box we saw that we could compute the steady-state levels of the chemical species by setting the differential equation to zero and solving for the species concentration.</p>
+<p>Exactly the same thing can be done with pathways that have lots of chemical species. However, the algebra can be more difficult, and for larger systems we still use computer software to compute the steady-state.</p>
+<p>However, the same conclusion applies which is that the steady-state concentrations will be a function of all the paymasters in the system.</p>
+</section>
+<section id="changes-to-the-steady-state">
+<h2>Changes to the steady-state<a class="headerlink" href="#changes-to-the-steady-state" title="Permalink to this heading">#</a></h2>
+<p>In Box 8, we saw that for a simple model, the steady-state concentration of a chemical species was a function of all the parameters of the system.</p>
+<p>A common parameter in a real biochemical pathway is the <strong>concentration of enzyme</strong> at each reaction step.</p>
+<p>We can change enzyme concentrations both in our computer models as well as in the wet lab and observe the effect on the pathway.</p>
+<p>What kinds of things can we observe?</p>
+<p>There are at least two:</p>
+<ol class="arabic simple">
+<li><p>The first we’ve already seen which are the concentrations of the various chemical species.</p></li>
+<li><p>There is however a second thin we can observe which are the <strong>rates of the reactions.</strong> If we were to increase the level of a given enzyme then it is very likely that the steady-state reaction rate will go up.</p></li>
+</ol>
+<p><strong>Terminology:</strong></p>
+<p>we need to introduce a new term which is a special term used to indicate the steady-state rate. This term is called the <strong>flux</strong> and is often designated with the symbol <span class="math notranslate nohighlight">\(J\)</span></p>
+</section>
+<section id="changing-enzyme-levels">
+<h2>Changing enzyme levels<a class="headerlink" href="#changing-enzyme-levels" title="Permalink to this heading">#</a></h2>
+<p>In the last box we said that we could observe how changing the level of a given enzyme can lead to changes in concentrations and fluxes.</p>
+<p>An important question to ask is what influence do the different enzymes in a pathway have on the concentrations and fluxes?</p>
+<p>This is the main question we will consider for the rest of the document.</p>
+</section>
+<section id="measuring-influence">
+<h2>Measuring influence<a class="headerlink" href="#measuring-influence" title="Permalink to this heading">#</a></h2>
+<p>In the last box we introduced the question as to what influence a given enzyme had on a pathway at steady-state.</p>
+<p>To answer this question we need some way to {bf quantify influence}.</p>
+<p>The most obvious way is to make a change in the concentration of a given enzyme and measure the corresponding steady-state change.</p>
+<p>If we use the symbol <span class="math notranslate nohighlight">\(\Delta\)</span> to indicate change then we can make a change <span class="math notranslate nohighlight">\(\Delta e\)</span> in an enzyme and observe the corresponding <strong>steady-state</strong> <span class="math notranslate nohighlight">\(\Delta\)</span> change in a chemical concentration or a flux.</p>
+<p>Better still, we can take the ratio of the <span class="math notranslate nohighlight">\(\Delta\)</span> changes:</p>
+<div class="math notranslate nohighlight">
+\[\text{Influence} = \frac{\Delta S}{\Delta e}\quad\]</div>
+<p>We can do the same for flux:</p>
+<div class="math notranslate nohighlight">
+\[\text{Influence} = \frac{\Delta J}{\Delta e}\quad\]</div>
+<p>It is important to emphasize that the change we are observing is <strong>the change in the steady-state level</strong>.</p>
+</section>
+<section id="the-problem-of-units">
+<h2>The problem of units<a class="headerlink" href="#the-problem-of-units" title="Permalink to this heading">#</a></h2>
+<p>In the last box we introduced the notion of a measure of influence as a ratio of $Delta$ changes. This idea has a couple of problems.</p>
+<p>The first is related to units. Experimentalists have many ways for measuring changes in a cell and two research groups might use two completely different approaches to measure
+the same thing, resulting in measurements that use different units. This makes it difficult to compare across different research groups.</p>
+<p>To avoid this issue we can eliminate units by dividing by the steady-state levels. For example, let’s say a pathway is at steady-state and a given chemical species, <span class="math notranslate nohighlight">\(S\)</span> is at
+steady-state and a given enzyme has a certain level, <span class="math notranslate nohighlight">\(e\)</span>. We can write out a unit-less influence as follows:</p>
+<div class="math notranslate nohighlight">
+\[\text{Influence} = \frac{\Delta S}{\Delta e} \frac{e}{S}\]</div>
+<p>The same can be done with the influence over a flux, <span class="math notranslate nohighlight">\(J\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\text{Influence} = \frac{\Delta J}{\Delta e} \frac{e}{J}\]</div>
+<p>This approach solves the units issue. There is still one more problem however.</p>
+</section>
+<section id="the-problem-of-the-delta">
+<h2>The problem of the delta<a class="headerlink" href="#the-problem-of-the-delta" title="Permalink to this heading">#</a></h2>
+<p>There is one more problem with our current measure of influence. Because biochemical systems are nonlinear, i.e they don’t usually respond in a linear way, the measure
+of influence will <strong>depend</strong> on the size of the <span class="math notranslate nohighlight">\(\Delta\)</span> we make.</p>
+<p>The way to get around this issue to make only small changes. Instead of using the symbol $Delta$, we will switch to the symbol <span class="math notranslate nohighlight">\(\delta\)</span>, to indicate a <strong>small change</strong>.</p>
+<p>Small changes can be made smaller and smaller, in fact so small that they can become, at least mathematically, infinitesimal. This moves us into the realm of <strong>calculus</strong>.
+Let’s follow this approach and define our influence as:</p>
+<div class="math notranslate nohighlight">
+\[\text{Influence} = \frac{\delta S}{\delta e} \frac{e}{S} \text{ and as } \delta e \text{ tends to zero},\]</div>
+<div class="math notranslate nohighlight">
+\[\text{ then the influence measure tends to } \frac{dS}{de} \frac{e}{S}\]</div>
+<p>The same can be done with the influence over a flux, $J$:</p>
+<div class="math notranslate nohighlight">
+\[\text{Influence} = \frac{\delta J}{\delta e} \frac{e}{J} \text{ and as } \delta e \text{ tends to zero},\]</div>
+<div class="math notranslate nohighlight">
+\[\text{ then the influence measure tends to } \frac{dJ}{de} \frac{e}{J}\]</div>
+<p>These influence measures have formal names:</p>
+<div class="math notranslate nohighlight">
+\[\text{Concentration Control Coefficient} =  \frac{S}{e} \frac{e}{S}\]</div>
+<div class="math notranslate nohighlight">
+\[\text{Flux Control Coefficient} =  \frac{dJ}{de} \frac{e}{J}\]</div>
+</section>
+<section id="a-real-example">
+<h2>A real example<a class="headerlink" href="#a-real-example" title="Permalink to this heading">#</a></h2>
+<p>Here is a real example where some researchers built a large computer model of metabolism in {em E.~coli}.</p>
+<p>The following is a heat-map for all the flux control coefficients in a large {em E.~coli} model.</p>
+<p>Red indicates that the enzyme has a lot of influence over a flux. Note that some are blue, these are negative coefficients, these indicating that an increase in enzyme level will decrease the flux, a negative influence if you like.</p>
+<p>The flux is indicated by the row and the enzyme to change is on the column (heat-map computed by Tellurium).</p>
+<a class="reference internal image-reference" href="_images/heatMap_ecoli.png"><img alt="_images/heatMap_ecoli.png" class="align-center" src="_images/heatMap_ecoli.png" style="width: 500px;" /></a>
+<p>Model from:</p>
+<p><a class="reference external" href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005396">plos journal</a></p>
+</section>
+<section id="looking-at-a-simpler-example">
+<h2>Looking at a simpler example<a class="headerlink" href="#looking-at-a-simpler-example" title="Permalink to this heading">#</a></h2>
+<p>Let’s look more closely at the control coefficients by looking at a simple linear chain of enzymes.</p>
+<p>We’ll generate 200 random linear chain models where each model contains eight enzymatic steps. The parameters values in the each model are randomly generated. We will compute the flux control coefficients for each step in each model and then calculate the average flux control coefficient for each step.</p>
+<p>This is what a single model looks like:</p>
+<div class="math notranslate nohighlight">
+\[X_o \stackrel{v_1}{\rightarrow} S_1 \stackrel{v_2}{\rightarrow} S_2  \stackrel{v_3}{\rightarrow} S_3 \stackrel{v_4}{\rightarrow} S_4 \stackrel{v_5}{\rightarrow} S_5 \stackrel{v_6}{\rightarrow} S_6 \stackrel{v_7}{\rightarrow} S_7 \stackrel{v_8}{\rightarrow} X_1\]</div>
+<p>The following is a bar graph that indicates the value for the average control coefficient at each step ($x$ axis) starting at the first step, marked with a one.</p>
+<a class="reference internal image-reference" href="_images/average_fcc.png"><img alt="_images/average_fcc.png" class="align-center" src="_images/average_fcc.png" style="width: 500px;" /></a>
+<p>We immediately see a pattern. Even though the kinetic parameters are random, we can clearly see that the first few steps have more influence than the steps further down the chain.</p>
+<p>Why is this?</p>
+</section>
+<section id="summation-of-control-coefficients">
+<h2>Summation of Control Coefficients<a class="headerlink" href="#summation-of-control-coefficients" title="Permalink to this heading">#</a></h2>
+<p>Before answering the question posed in the last box there is one interesting observation we can make about the control coefficients.</p>
+<p>If you look at the distribution of flux control coefficients in the bar chart in the previous box, you may notice that the heights of the bars appear to add to one. This is no coincidence.</p>
+<p>This is in fact a genial result that applies to any pathway which we summarise below:</p>
+<p>The sum of all the flux control coefficients is one</p>
+<div class="math notranslate nohighlight">
+\[\sum C^J_{e_i} = 1\]</div>
+<p>A parallel summation law also applies to the concentration control coefficients which sum to zero:</p>
+<div class="math notranslate nohighlight">
+\[\sum C^S_{e_i} = 0\]</div>
+<p>Both summations are over all enzymatic steps in the pathway.</p>
+</section>
+<section id="what-happens-when-we-change-an-enzyme">
+<h2>What happens when we change an enzyme?<a class="headerlink" href="#what-happens-when-we-change-an-enzyme" title="Permalink to this heading">#</a></h2>
+<p>In order to explain the results we got in the last box, we need to introduce a new concept.</p>
+<p>When we increase the amount of enzyme, this causes the reaction rate for that step to increase. This in turn cases downstream and upstream steps to respond
+as the disturbance ripples out from the source.</p>
+<p>The following figure shows what happens in a six step linear pathway when we apply a pulse to the first enzyme In this case, we increase the enzyme by
+50%, wait 10 time units then bring the enzyme back to it original value.</p>
+<a class="reference internal image-reference" href="_images/disturbance_e1.png"><img alt="_images/disturbance_e1.png" class="align-center" src="_images/disturbance_e1.png" style="width: 500px;" /></a>
+<p>Each panel show the effect of the pulse on <span class="math notranslate nohighlight">\(S_1\)</span>, <span class="math notranslate nohighlight">\(S_2\)</span> etc. You can see that the pulse travels downstream as the disturbance ripples out.</p>
+</section>
+<section id="how-do-disturbances-spread-out">
+<h2>How do disturbances spread out?<a class="headerlink" href="#how-do-disturbances-spread-out" title="Permalink to this heading">#</a></h2>
+<p>In the last box we saw how a disturbance in enzyme $e_1$, moved downstream. What causes this to happen and is there a way to quantify it?</p>
+<p>Imagine changing <span class="math notranslate nohighlight">\(e_1\)</span>, this causes <span class="math notranslate nohighlight">\(v_1\)</span> to increase. This in turn causes <span class="math notranslate nohighlight">\(S_1\)</span> to increase which causes <span class="math notranslate nohighlight">\(v_2\)</span> to increase. This causes <span class="math notranslate nohighlight">\(S_2\)</span> to increase.
+This continues down the chain until we reach the end at the fixed species <span class="math notranslate nohighlight">\(X_1\)</span>.</p>
+<p>The key unraveling this, is understanding how a species such as <span class="math notranslate nohighlight">\(S_1\)</span> causes the next rate, <span class="math notranslate nohighlight">\(v_2\)</span> to change. One way to look at this is to use the
+derivative, <span class="math notranslate nohighlight">\(\partial v_2/\partial S_1\)</span>. This tells us how <span class="math notranslate nohighlight">\(S_1\)</span> affects the rate <span class="math notranslate nohighlight">\(v_1\)</span>. However, just like the arguments we used with the control coefficients,
+it would be worthwhile eliminating the units, so let’s do that:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial v_2}{\partial S_1} \frac{S_1}{v_2}\]</div>
+<p>This is called the {bf elasticity coefficient} and is given the symbol <span class="math notranslate nohighlight">\(\varepsilon\)</span>. We would write it like this:</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon^{v_2}_{S_1} = \frac{\partial v_2}{\partial S_1} \frac{S_1}{v_2} \approx \frac{v_2\%}{S_1\%}\]</div>
+<p>Often we will drop the v and the s in the superscript and subscript to just leave the numbers: <span class="math notranslate nohighlight">\(\varepsilon^2_1\)</span></p>
+<p>Another way to look at this is to rearrange the elasticity expression like this:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial v_2}{v_2} = \varepsilon^{v_2}_{S_1} \frac{\partial S_1}{S_1}\]</div>
+<p>This tells use that a change in <span class="math notranslate nohighlight">\(S_2\)</span> causes a change in <span class="math notranslate nohighlight">\(v_2\)</span>. This is in fact the clue we need to understand how disturbances move along a pathway.</p>
+</section>
+<section id="dealing-with-multiple-changes">
+<h2>Dealing with multiple changes<a class="headerlink" href="#dealing-with-multiple-changes" title="Permalink to this heading">#</a></h2>
+<p>medskip
+Because we are dealing with infinitesimal changes, if there are other changes associated with <span class="math notranslate nohighlight">\(v_2\)</span>, all we have to do is add them together to get the overall change.</p>
+<p>For example, if both <span class="math notranslate nohighlight">\(S_1\)</span> and <span class="math notranslate nohighlight">\(S_2\)</span> change, which is what will happen in a real pathway, we can get the overall change in rate using:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial v_2}{v_2} = \varepsilon^{v_2}_{S_1} \frac{\partial S_1}{S_1} + \varepsilon^{v_2}_{S_2} \frac{\partial S_2}{S_2}\]</div>
+<p>In this case we are using two elasticities, one for <span class="math notranslate nohighlight">\(S_1\)</span> and the other for <span class="math notranslate nohighlight">\(S_2\)</span>.</p>
+<p>A disturbance travels along a pathway by jumping from elasticity to elasticity. The values for the elasticities determine how much of the disturbance moves from one step to the next.</p>
+<p>We can now say that if a given step has a high flux control coefficient, this must mean that the disturbance finds it easy to travel out, suggesting that there
+is a favourable set of elasticities to transmit the disturbance.</p>
+</section>
+<section id="perturbations-at-the-first-and-last-step">
+<h2>Perturbations at the first and last step<a class="headerlink" href="#perturbations-at-the-first-and-last-step" title="Permalink to this heading">#</a></h2>
+<p>The figure below shows the path that a perturbation takes when we change <span class="math notranslate nohighlight">\(e_1\)</span>, and the elasticities that transmit the perturbation from step to step.</p>
+<a class="reference internal image-reference" href="_images/pertub1.png"><img alt="_images/pertub1.png" class="align-center" src="_images/pertub1.png" style="width: 500px;" /></a>
+<p>In contrast, the next figure shows what happens when a perturbation is made to the last step, in this case the disturbance is transmitted up stream:</p>
+<a class="reference internal image-reference" href="_images/pertub2.png"><img alt="_images/pertub2.png" class="align-center" src="_images/pertub2.png" style="width: 500px;" /></a>
+<p>The major question we want to ask is why are flux control coefficients smaller on the downstream steps compared to the steps near the front?</p>
+<p>A more detailed analysis shows that the flux control coefficient <span class="math notranslate nohighlight">\(C^J_{e_1}\)</span> is proportional to the product of the reactant elasticities:</p>
+<div class="math notranslate nohighlight">
+\[C^J_{e_1} \propto \varepsilon^2_1\ \varepsilon^3_2\ \varepsilon^4_3\]</div>
+<p>while the last flux control coefficient is proportional to the product elasticities:</p>
+<div class="math notranslate nohighlight">
+\[C^J_{e_4} \propto \varepsilon^1_1\ \varepsilon^2_2\ \varepsilon^3_3\]</div>
+<p>So what’s so special about the reactant and product elastcities?</p>
+</section>
+<section id="reactant-and-product-elasticities">
+<h2>Reactant and product elasticities<a class="headerlink" href="#reactant-and-product-elasticities" title="Permalink to this heading">#</a></h2>
+<p>Let’s derive the reactant and product elasticities for a simple reversible mass-action reaction:</p>
+<div class="math notranslate nohighlight">
+\[v = k_1 S - k_2 P\]</div>
+<p>where $S$ is the reactant and $P$ the product. We can derive the elasticities by differentiating the expression and applying the necessary scaling. Recall that the
+elasticities for the substrate and product are given by:</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon^{v}_{S} = \frac{\partial v}{\partial S} \frac{S}{v}, \quad \varepsilon^{v}_{P} = \frac{\partial v}{\partial P} \frac{P}{v}\]</div>
+<p>Applying these formula to the rate laws yields the following elasticity terms:</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon^{v}_{S} = \frac{k_1 S}{k_1 S - k_2 P},\quad \varepsilon^{v}_{P} = -\frac{k_1 P}{k_1 S - k_2 P}\]</div>
+<p>Two things to note. The first is that <span class="math notranslate nohighlight">\(\varepsilon^{v}_{S}\)</span> is {bf positive} and <span class="math notranslate nohighlight">\(\varepsilon^{v}_{P}\)</span> is <strong>negative</strong>. This is what we’d expect. The second thing to note is that the
+sum of the two elasticities is one:</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon^{v}_{S} +  \varepsilon^{v}_{P} = 1\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\varepsilon^{v}_{P}\)</span> is negative then is must be true that:</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon^{v}_{S} &gt; \text{abs}\ (\varepsilon^{v}_{P})\]</div>
+<p>where {tt abs} means the absolute value. This tells us that substrates have more influence over the reaction rate than products.</p>
+<p>This is significant because it means that since downstream perturbations depend on the reactant elasticities, it is far easier for a perturbation to travel downstream than it is to travel upstream. This explains why flux control coefficients tend to be high near the start of a pathway compared to those near the end.</p>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<p>Before we leave simple linear chains of reactions, let’s summarise the overall conclusion and what it implies for metabolic engineers and those looking for suitable drug targets to act on.</p>
+<p>Let’s say we have a linear pathway where we know very little if anything about the properties of the enzymes but you do know there is no negative feedback regulation.</p>
+<p>Then, on average, {bf the sites that are most likely to influence the pathway flux are the two first steps of the pathway.}</p>
+<p>If you are a metabolic engineer or a pharmaceutical researcher looking for a target, you should target the first two steps of the pathway.</p>
+</section>
+<section id="effect-of-negative-feedback">
+<h2>Effect of negative feedback<a class="headerlink" href="#effect-of-negative-feedback" title="Permalink to this heading">#</a></h2>
+<p>The final thing to cover is to ask what happens where there is a negative feedback loop in the pathway, such as the one shown below:</p>
+<a class="reference internal image-reference" href="_images/NegFeedback_FourSteps.png"><img alt="_images/NegFeedback_FourSteps.png" class="align-center" src="_images/NegFeedback_FourSteps.png" style="width: 500px;" /></a>
+<p>As we’ve seen, for pathways without negative feedback, the flux control coefficients tend to concentrate in the upper portion of the pathway.</p>
+<p>In complete contrast, for pathways with negative feedback loops, flux control shift downstream to just beyond the signal species ($S_3$ in the figure). To show this is the case, 200 models with random parameters that include a negative feedback loop were simulated and the flux control coefficients averaged. As before we have 8 enzyme catalyzed steps. The results are shown in the histogram plot below. It should be clear that the flux control has shifted from the first two steps to the last step. There is still a residual of influence in the first step but 70% of the control has shifted downstream.</p>
+<a class="reference internal image-reference" href="_images/average_fcc_negfeed.png"><img alt="_images/average_fcc_negfeed.png" class="align-center" src="_images/average_fcc_negfeed.png" style="width: 500px;" /></a>
+<p>The reason for this is that the negative feedback loop resists any changes made upstream of the signal species <span class="math notranslate nohighlight">\(S_4\)</span> and it enhances the ability of the last step to influence the flux.
+end{mybox}</p>
+</section>
+<section id="summary-of-the-effect-of-negative-feedback">
+<h2>Summary of the effect of negative feedback<a class="headerlink" href="#summary-of-the-effect-of-negative-feedback" title="Permalink to this heading">#</a></h2>
+<p>To summarise:</p>
+<p>In contrast to unregulated pathways, for metabolic engineers or those researchers looking for suitable drug targets to act on, should preferentially target those steps downstream of the signal.</p>
+</section>
 </section>
 
 
@@ -327,6 +741,43 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biochemical-systems">Biochemical systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-a-system-as-a-mathematical-model">Describing a system as a mathematical model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-mathematical-model">Building a mathematical model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-rate-laws-to-a-mathematical-model">Adding rate laws to a mathematical model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-a-simulation">Running a simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-steady-state">The steady-state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-steady-state">Calculating the steady-state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bigger-pathways">Bigger pathways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changes-to-the-steady-state">Changes to the steady-state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-enzyme-levels">Changing enzyme levels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-influence">Measuring influence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-of-units">The problem of units</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-of-the-delta">The problem of the delta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-real-example">A real example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-at-a-simpler-example">Looking at a simpler example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summation-of-control-coefficients">Summation of Control Coefficients</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-when-we-change-an-enzyme">What happens when we change an enzyme?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-disturbances-spread-out">How do disturbances spread out?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-multiple-changes">Dealing with multiple changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbations-at-the-first-and-last-step">Perturbations at the first and last step</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reactant-and-product-elasticities">Reactant and product elasticities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-negative-feedback">Effect of negative feedback</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-the-effect-of-negative-feedback">Summary of the effect of negative feedback</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

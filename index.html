@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Introduction to Metabolic Control Analysis &#8212; Mcabook 0.1 documentation</title>
+    <title>Introduction to Metabolic Control Analysis &#8212; MCA Book v0.1</title>
   
   
   
@@ -128,7 +128,7 @@
   
   
   
-    <p class="title logo__title">Mcabook 0.1 documentation</p>
+    <p class="title logo__title">MCA Book v0.1</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -304,18 +304,44 @@ document.write(`
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#biochemical-systems">Biochemical systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#describing-a-system-as-a-mathematical-model">Describing a system as a mathematical model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#building-a-mathematical-model">Building a mathematical model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#adding-rate-laws-to-a-mathematical-model">Adding rate laws to a mathematical model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#running-a-simulation">Running a simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#the-steady-state">The steady-state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#calculating-the-steady-state">Calculating the steady-state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#bigger-pathways">Bigger pathways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#changes-to-the-steady-state">Changes to the steady-state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#changing-enzyme-levels">Changing enzyme levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#measuring-influence">Measuring influence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#the-problem-of-units">The problem of units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#the-problem-of-the-delta">The problem of the delta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#a-real-example">A real example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#looking-at-a-simpler-example">Looking at a simpler example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#summation-of-control-coefficients">Summation of Control Coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#what-happens-when-we-change-an-enzyme">What happens when we change an enzyme?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#how-do-disturbances-spread-out">How do disturbances spread out?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#dealing-with-multiple-changes">Dealing with multiple changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#perturbations-at-the-first-and-last-step">Perturbations at the first and last step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#reactant-and-product-elasticities">Reactant and product elasticities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#effect-of-negative-feedback">Effect of negative feedback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#summary-of-the-effect-of-negative-feedback">Summary of the effect of negative feedback</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="elasticities.html">Elasticities</a></li>
 </ul>
 </div>
-<p>Metabolic control analysis (MCA) is a mathematical framework for describing metabolic, signaling, and genetic pathways. MCA quantifies how variables, such as
+<p>Metabolic control analysis (MCA) is a mathematical framework for describing the behavior of metabolic, signaling, and genetic pathways. MCA quantifies how variables, such as
 fluxes and species concentrations, depend on network parameters. In particular, it is able to describe how network-dependent properties, called control coefficients,
-depend on local properties called elasticities or Elasticity Coefficients.</p>
-<p>MCA was originally developed to describe the control in metabolic pathways but was subsequently extended to describe signaling and genetic networks. MCA has sometimes
-also been referred to as Metabolic Control Theory, but this terminology was rather strongly opposed by Henrik Kacser, one of the founders[citation needed].</p>
-<p>More recent work has shown that MCA can be mapped directly on to classical control theory and are as such equivalent.</p>
+depend on local properties called elasticities or elasticity coefficients.</p>
+<p>MCA was originally developed to describe the control in metabolic pathways but was subsequently extended to describe signaling and genetic networks. Recent work has shown that MCA can
+be mapped directly on to classical control theory and are as such equivalent.</p>
 <p>Biochemical systems theory is a similar formalism, though with rather different objectives. Both are evolutions of
 an earlier theoretical analysis by Joseph Higgins.</p>
+<p>This book will cover the basic concepts of MCA.</p>
 </section>
 <section id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">#</a></h1>
