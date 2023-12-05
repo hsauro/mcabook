@@ -15,7 +15,7 @@ A biochemical system is a series of linked chemical reactions, often enzyme cata
    S_1 \stackrel{v_1}{\rightarrow} S_2 \stackrel{v_2}{\rightarrow} S_3
    \end{eqnarray*}
 
-`S_1, S_2,` and `S_3` are the names of the chemical species and `v_1` and `v_2` are the reaction rates. This reaction schemem describes the conversion of `S_1` to `S_2` and `S_2` to `S_3`
+`S_1, S_2,` and `S_3` are the names of the chemical species and `v_1` and `v_2` are the reaction rates. This reaction scheme describes the conversion of `S_1` to `S_2` and `S_2` to `S_3`
 
 
 Describing a system as a mathematical model
@@ -335,7 +335,7 @@ Let's follow this approach and define our influence as:
 
 .. math:: \text{ then the influence measure tends to } \frac{dS}{de} \frac{e}{S}
 
-The same can be done with the influence over a flux, $J$:
+The same can be done with the influence over a flux, `J`:
 
 .. math:: \text{Influence} = \frac{\delta J}{\delta e} \frac{e}{J} \text{ and as } \delta e \text{ tends to zero}, 
 
@@ -360,7 +360,7 @@ Red indicates that the enzyme has a lot of influence over a flux. Note that some
 The flux is indicated by the row and the enzyme to change is on the column (heat-map computed by Tellurium).
 
 .. image:: images\\heatMap_ecoli.png
-  :width: 500
+  :width: 600
   :align: center
 
 Model from:
@@ -380,7 +380,7 @@ This is what a single model looks like:
 .. math:: X_o \stackrel{v_1}{\rightarrow} S_1 \stackrel{v_2}{\rightarrow} S_2  \stackrel{v_3}{\rightarrow} S_3 \stackrel{v_4}{\rightarrow} S_4 \stackrel{v_5}{\rightarrow} S_5 \stackrel{v_6}{\rightarrow} S_6 \stackrel{v_7}{\rightarrow} S_7 \stackrel{v_8}{\rightarrow} X_1
 
 
-The following is a bar graph that indicates the value for the average control coefficient at each step ($x$ axis) starting at the first step, marked with a one.
+The following is a bar graph that indicates the value for the average control coefficient at each step (`x` axis) starting at the first step, marked with a one.
 
 .. image:: images\\average_fcc.png
   :width: 500
@@ -434,7 +434,7 @@ How do disturbances spread out?
 -------------------------------
 
 
-In the last box we saw how a disturbance in enzyme $e_1$, moved downstream. What causes this to happen and is there a way to quantify it?
+In the last box we saw how a disturbance in enzyme `e_1`, moved downstream. What causes this to happen and is there a way to quantify it?
 
 
 Imagine changing `e_1`, this causes `v_1` to increase. This in turn causes `S_1` to increase which causes `v_2` to increase. This causes `S_2` to increase. 
@@ -511,7 +511,7 @@ Let's derive the reactant and product elasticities for a simple reversible mass-
 
 .. math:: v = k_1 S - k_2 P 
 
-where $S$ is the reactant and $P$ the product. We can derive the elasticities by differentiating the expression and applying the necessary scaling. Recall that the
+where `S` is the reactant and `P` the product. We can derive the elasticities by differentiating the expression and applying the necessary scaling. Recall that the
 elasticities for the substrate and product are given by:
 
 .. math:: \varepsilon^{v}_{S} = \frac{\partial v}{\partial S} \frac{S}{v}, \quad \varepsilon^{v}_{P} = \frac{\partial v}{\partial P} \frac{P}{v} 
@@ -558,7 +558,7 @@ The final thing to cover is to ask what happens where there is a negative feedba
 As we've seen, for pathways without negative feedback, the flux control coefficients tend to concentrate in the upper portion of the pathway.
 
 
-In complete contrast, for pathways with negative feedback loops, flux control shift downstream to just beyond the signal species ($S_3$ in the figure). To show this is the case, 200 models with random parameters that include a negative feedback loop were simulated and the flux control coefficients averaged. As before we have 8 enzyme catalyzed steps. The results are shown in the histogram plot below. It should be clear that the flux control has shifted from the first two steps to the last step. There is still a residual of influence in the first step but 70\% of the control has shifted downstream.
+In complete contrast, for pathways with negative feedback loops, flux control shift downstream to just beyond the signal species (`S_3` in the figure). To show this is the case, 200 models with random parameters that include a negative feedback loop were simulated and the flux control coefficients averaged. As before we have 8 enzyme catalyzed steps. The results are shown in the histogram plot below. It should be clear that the flux control has shifted from the first two steps to the last step. There is still a residual of influence in the first step but 70\% of the control has shifted downstream.
 
 .. image:: images\\average_fcc_negfeed.png
   :width: 500

@@ -331,7 +331,7 @@ document.write(`
 \[\begin{eqnarray*}
 S_1 \stackrel{v_1}{\rightarrow} S_2 \stackrel{v_2}{\rightarrow} S_3
 \end{eqnarray*}\]</div>
-<p><span class="math notranslate nohighlight">\(S_1, S_2,\)</span> and <span class="math notranslate nohighlight">\(S_3\)</span> are the names of the chemical species and <span class="math notranslate nohighlight">\(v_1\)</span> and <span class="math notranslate nohighlight">\(v_2\)</span> are the reaction rates. This reaction schemem describes the conversion of <span class="math notranslate nohighlight">\(S_1\)</span> to <span class="math notranslate nohighlight">\(S_2\)</span> and <span class="math notranslate nohighlight">\(S_2\)</span> to <span class="math notranslate nohighlight">\(S_3\)</span></p>
+<p><span class="math notranslate nohighlight">\(S_1, S_2,\)</span> and <span class="math notranslate nohighlight">\(S_3\)</span> are the names of the chemical species and <span class="math notranslate nohighlight">\(v_1\)</span> and <span class="math notranslate nohighlight">\(v_2\)</span> are the reaction rates. This reaction scheme describes the conversion of <span class="math notranslate nohighlight">\(S_1\)</span> to <span class="math notranslate nohighlight">\(S_2\)</span> and <span class="math notranslate nohighlight">\(S_2\)</span> to <span class="math notranslate nohighlight">\(S_3\)</span></p>
 </section>
 <section id="describing-a-system-as-a-mathematical-model">
 <h2>Describing a system as a mathematical model<a class="headerlink" href="#describing-a-system-as-a-mathematical-model" title="Permalink to this heading">#</a></h2>
@@ -558,7 +558,7 @@ Let’s follow this approach and define our influence as:</p>
 \[\text{Influence} = \frac{\delta S}{\delta e} \frac{e}{S} \text{ and as } \delta e \text{ tends to zero},\]</div>
 <div class="math notranslate nohighlight">
 \[\text{ then the influence measure tends to } \frac{dS}{de} \frac{e}{S}\]</div>
-<p>The same can be done with the influence over a flux, $J$:</p>
+<p>The same can be done with the influence over a flux, <span class="math notranslate nohighlight">\(J\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\text{Influence} = \frac{\delta J}{\delta e} \frac{e}{J} \text{ and as } \delta e \text{ tends to zero},\]</div>
 <div class="math notranslate nohighlight">
@@ -575,7 +575,7 @@ Let’s follow this approach and define our influence as:</p>
 <p>The following is a heat-map for all the flux control coefficients in a large {em E.~coli} model.</p>
 <p>Red indicates that the enzyme has a lot of influence over a flux. Note that some are blue, these are negative coefficients, these indicating that an increase in enzyme level will decrease the flux, a negative influence if you like.</p>
 <p>The flux is indicated by the row and the enzyme to change is on the column (heat-map computed by Tellurium).</p>
-<a class="reference internal image-reference" href="_images/heatMap_ecoli.png"><img alt="_images/heatMap_ecoli.png" class="align-center" src="_images/heatMap_ecoli.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="_images/heatMap_ecoli.png"><img alt="_images/heatMap_ecoli.png" class="align-center" src="_images/heatMap_ecoli.png" style="width: 600px;" /></a>
 <p>Model from:</p>
 <p><a class="reference external" href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005396">plos journal</a></p>
 </section>
@@ -586,7 +586,7 @@ Let’s follow this approach and define our influence as:</p>
 <p>This is what a single model looks like:</p>
 <div class="math notranslate nohighlight">
 \[X_o \stackrel{v_1}{\rightarrow} S_1 \stackrel{v_2}{\rightarrow} S_2  \stackrel{v_3}{\rightarrow} S_3 \stackrel{v_4}{\rightarrow} S_4 \stackrel{v_5}{\rightarrow} S_5 \stackrel{v_6}{\rightarrow} S_6 \stackrel{v_7}{\rightarrow} S_7 \stackrel{v_8}{\rightarrow} X_1\]</div>
-<p>The following is a bar graph that indicates the value for the average control coefficient at each step ($x$ axis) starting at the first step, marked with a one.</p>
+<p>The following is a bar graph that indicates the value for the average control coefficient at each step (<span class="math notranslate nohighlight">\(x\)</span> axis) starting at the first step, marked with a one.</p>
 <a class="reference internal image-reference" href="_images/average_fcc.png"><img alt="_images/average_fcc.png" class="align-center" src="_images/average_fcc.png" style="width: 500px;" /></a>
 <p>We immediately see a pattern. Even though the kinetic parameters are random, we can clearly see that the first few steps have more influence than the steps further down the chain.</p>
 <p>Why is this?</p>
@@ -616,7 +616,7 @@ as the disturbance ripples out from the source.</p>
 </section>
 <section id="how-do-disturbances-spread-out">
 <h2>How do disturbances spread out?<a class="headerlink" href="#how-do-disturbances-spread-out" title="Permalink to this heading">#</a></h2>
-<p>In the last box we saw how a disturbance in enzyme $e_1$, moved downstream. What causes this to happen and is there a way to quantify it?</p>
+<p>In the last box we saw how a disturbance in enzyme <span class="math notranslate nohighlight">\(e_1\)</span>, moved downstream. What causes this to happen and is there a way to quantify it?</p>
 <p>Imagine changing <span class="math notranslate nohighlight">\(e_1\)</span>, this causes <span class="math notranslate nohighlight">\(v_1\)</span> to increase. This in turn causes <span class="math notranslate nohighlight">\(S_1\)</span> to increase which causes <span class="math notranslate nohighlight">\(v_2\)</span> to increase. This causes <span class="math notranslate nohighlight">\(S_2\)</span> to increase.
 This continues down the chain until we reach the end at the fixed species <span class="math notranslate nohighlight">\(X_1\)</span>.</p>
 <p>The key unraveling this, is understanding how a species such as <span class="math notranslate nohighlight">\(S_1\)</span> causes the next rate, <span class="math notranslate nohighlight">\(v_2\)</span> to change. One way to look at this is to use the
@@ -665,7 +665,7 @@ is a favourable set of elasticities to transmit the disturbance.</p>
 <p>Let’s derive the reactant and product elasticities for a simple reversible mass-action reaction:</p>
 <div class="math notranslate nohighlight">
 \[v = k_1 S - k_2 P\]</div>
-<p>where $S$ is the reactant and $P$ the product. We can derive the elasticities by differentiating the expression and applying the necessary scaling. Recall that the
+<p>where <span class="math notranslate nohighlight">\(S\)</span> is the reactant and <span class="math notranslate nohighlight">\(P\)</span> the product. We can derive the elasticities by differentiating the expression and applying the necessary scaling. Recall that the
 elasticities for the substrate and product are given by:</p>
 <div class="math notranslate nohighlight">
 \[\varepsilon^{v}_{S} = \frac{\partial v}{\partial S} \frac{S}{v}, \quad \varepsilon^{v}_{P} = \frac{\partial v}{\partial P} \frac{P}{v}\]</div>
@@ -694,7 +694,7 @@ sum of the two elasticities is one:</p>
 <p>The final thing to cover is to ask what happens where there is a negative feedback loop in the pathway, such as the one shown below:</p>
 <a class="reference internal image-reference" href="_images/NegFeedback_FourSteps.png"><img alt="_images/NegFeedback_FourSteps.png" class="align-center" src="_images/NegFeedback_FourSteps.png" style="width: 500px;" /></a>
 <p>As we’ve seen, for pathways without negative feedback, the flux control coefficients tend to concentrate in the upper portion of the pathway.</p>
-<p>In complete contrast, for pathways with negative feedback loops, flux control shift downstream to just beyond the signal species ($S_3$ in the figure). To show this is the case, 200 models with random parameters that include a negative feedback loop were simulated and the flux control coefficients averaged. As before we have 8 enzyme catalyzed steps. The results are shown in the histogram plot below. It should be clear that the flux control has shifted from the first two steps to the last step. There is still a residual of influence in the first step but 70% of the control has shifted downstream.</p>
+<p>In complete contrast, for pathways with negative feedback loops, flux control shift downstream to just beyond the signal species (<span class="math notranslate nohighlight">\(S_3\)</span> in the figure). To show this is the case, 200 models with random parameters that include a negative feedback loop were simulated and the flux control coefficients averaged. As before we have 8 enzyme catalyzed steps. The results are shown in the histogram plot below. It should be clear that the flux control has shifted from the first two steps to the last step. There is still a residual of influence in the first step but 70% of the control has shifted downstream.</p>
 <a class="reference internal image-reference" href="_images/average_fcc_negfeed.png"><img alt="_images/average_fcc_negfeed.png" class="align-center" src="_images/average_fcc_negfeed.png" style="width: 500px;" /></a>
 <p>The reason for this is that the negative feedback loop resists any changes made upstream of the signal species <span class="math notranslate nohighlight">\(S_4\)</span> and it enhances the ability of the last step to influence the flux.
 end{mybox}</p>
