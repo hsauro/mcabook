@@ -1,7 +1,7 @@
 .. default-role:: math 
 
-Introduction
-============
+Quick Introduction
+==================
 
 Biochemical systems
 -------------------

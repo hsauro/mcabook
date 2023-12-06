@@ -1,0 +1,500 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>3.6. Branched Pathways &#8212; MCA Book v0.1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'intermediate/branchedPathway';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.7. Negative Feedback" href="negativeFeedback.html" />
+    <link rel="prev" title="3.5. Linear Pathways" href="linearPathway.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">MCA Book v0.1</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../summaryResults.html">1. Essential Results</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../introductoryTopics/index.html">2. Quickstart Topics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introductoryTopics/controlCoefficients.html">2.1. Control Coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introductoryTopics/elasticities.html">2.2. Elasticities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introductoryTopics/responseCoefficients.html">2.3. Response Coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introductoryTopics/linearPathway.html">2.4. Linear Pathway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introductoryTopics/negativeFeedback.html">2.5. Negative Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">3. Intermediate Topics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="controlCoefficients.html">3.1. Control Coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elasticities.html">3.2. Elasticities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summationTheorems.html">3.3. Summation Theorems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connectivityTheorems.html">3.4. Connectivity Theorems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linearPathway.html">3.5. Linear Pathways</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.6. Branched Pathways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="negativeFeedback.html">3.7. Negative Feedback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cycles.html">3.8. Cycles</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../advanced/index.html">4. Advanced Topics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/stoichiometryMatrix.html">4.1. Stoichiometry Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/systemEquation.html">4.2. System Equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/stability.html">4.3. Stability</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/intermediate/branchedPathway.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Branched Pathways</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="branched-pathways">
+<h1><span class="section-number">3.6. </span>Branched Pathways<a class="headerlink" href="#branched-pathways" title="Permalink to this heading">#</a></h1>
+<p>In this chapter we will review branched systems.</p>
+<p>Branching structures are one of the most common patterns in biochemical networks. Even a pathway such as glycolysis, often depicted as a straight chain in textbooks, is in fact a highly branched pathway.</p>
+<p>At any given branch node, where a node is a molecular species, there will be conservation of mass. Given a node species, $s_i$, with $b$ branches entering the node and $d$ branches leaving, the net rate of change in concentration of $s_i$ is:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i=1}^b v_i - \sum_{j=1}^d v_j = \frac{ds_i}{dt}\]</div>
+<p>At steady state when $ds_i/dt = 0$, it must therefore be true that:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i=1}^b v_i = \sum_{j=1}^d v_j\]</div>
+<p>For example consider the simple branched pathway shown in Figure~ref{fig:simpleBranch}. <span class="math notranslate nohighlight">\(J_1, J_2\)</span> and <span class="math notranslate nohighlight">\(J_3\)</span> are the steady state fluxes. By the law of
+conservation of mass, the fluxes in each limb, at steady state will be governed by the relationship:</p>
+<div class="math notranslate nohighlight">
+\[J_1 - (J_2 + J_3) = 0 \qquad\text{or}\qquad J_1 = J_2 + J_3\]</div>
+<div class="figure" style="text-align: center"><p><img  src="../_images/tikz-095cd0bb863365084c5e6f8cad42b892a6aa2970.svg" alt="Figure made with TikZ" /></p>
+</div><p>Simple branched pathway. This pathway has three different fluxes, <span class="math notranslate nohighlight">\(J_1, J_2\)</span>, and <span class="math notranslate nohighlight">\(J_3\)</span>, which at steady state are constrained by <span class="math notranslate nohighlight">\(J_1 = J_2 + J_3\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(e_1\)</span>, <span class="math notranslate nohighlight">\(e_2\)</span>, and <span class="math notranslate nohighlight">\(e_3\)</span> correspond to the concentration of enzyme at each step in the branched pathway. We can therefore define control coefficients,
+for example <span class="math notranslate nohighlight">\(C^{J_1}_{e_1}\)</span> which corresponds to the influence that Ep{1} has on the flux <span class="math notranslate nohighlight">\(J_1\)</span> or <span class="math notranslate nohighlight">\(C^s_{e_2}\)</span> which corresponds to the influence enzyme <span class="math notranslate nohighlight">\(e_2\)</span>
+has on the concentration of the intermediate S. In total there will be three concentration control coefficients <span class="math notranslate nohighlight">\(C^s_{e_1}\)</span>, <span class="math notranslate nohighlight">\(C^s_{e_2}\)</span>, and <span class="math notranslate nohighlight">\(C^s_{e_3}\)</span>. For
+the flux control coefficients there will be one set of three flux control coefficients for each flux in the branched pathway. Given that there are three fluxes,
+it must mean there are nine flux control coefficients in total. Table~ref{tbl:CCBranchedSystem} lists all twelve control coefficients. For pathways with more
+complex branching the number of flux control coefficients increases further.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{llll} \hline
+ C^{J_1}_{e_1}\quad &amp; C^{J_2}_{e_1}\quad &amp; C^{J_3}_{e_1}$ &amp; C^{s}_{e_1} \\[8pt]
+ C^{J_1}_{e_2} &amp; C^{J_2}_{e_2}$ &amp; $C^{J_3}_{e_2} &amp; C^{s}_{e_2} \\[8pt]
+ C^{J_1}_{e_3} &amp; C^{J_2}_{e_3}$ &amp; $C^{J_3}_{e_3} &amp; C^{s}_{e_3} \\ \hline
+\end{array}\end{split}\]</div>
+<p>Set of all control coefficients for the simple branch pathway.</p>
+<p>Each set of three flux control coefficients must obey the flux summation theorem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+C^{J_1}_{e_1} + C^{J_1}_{e_2} + C^{J_1}_{e_3} &amp;= 1\\[4pt]
+C^{J_2}_{e_1} + C^{J_2}_{e_2} + C^{J_2}_{e_3} &amp;= 1 \\[4pt]
+C^{J_3}_{e_1} + C^{J_3}_{e_2} + C^{J_3}_{e_3} &amp;= 1
+\end{align*}\end{split}\]</div>
+<p>Likewise there will also be three connectivity theorems that must be obeyed:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+C^{J_1}_{e_1} \varepsilon^{v_1}_s + C^{J_1}_{e_2} \varepsilon^{v_2}_s + C^{J_1}_{e_3} \varepsilon^{v_3}_s  &amp;= 0 \\[4pt]
+C^{J_2}_{e_1} \varepsilon^{v_1}_s + C^{J_2}_{e_2} \varepsilon^{v_2}_s + C^{J_2}_{e_3} \varepsilon^{v_3}_s  &amp;= 0 \\[4pt]
+C^{J_3}_{e_1} \varepsilon^{v_1}_s + C^{J_3}_{e_2} \varepsilon^{v_2}_s + C^{J_3}_{e_3} \varepsilon^{v_3}_s  &amp;= 0
+\end{align*}\end{split}\]</div>
+<p>If we consider one set of matching pairs such as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+C^{J_1}_{e_1} + C^{J_1}_{e_2} + C^{J_1}_{e_3} &amp;= 1\\[4pt]
+C^{J_1}_{e_1} \varepsilon^{v_1}_s + C^{J_1}_{e_2} \varepsilon^{v_2}_s + C^{J_1}_{e_3} \varepsilon^{v_3}_s  &amp;= 0
+\end{align*}\end{split}\]</div>
+<p>there are three unknowns, <span class="math notranslate nohighlight">\(C^{J_1}_{e_1}, C^{J_1}_{e_3}\)</span>, and <span class="math notranslate nohighlight">\(C^{J_1}_{e_3}\)</span> but only two equations. To solve for <span class="math notranslate nohighlight">\(C^{J_1}_{e_i}\)</span>, we need another equation.</p>
+<p>Let the fraction of flux through <span class="math notranslate nohighlight">\(J_2\)</span> be given by <span class="math notranslate nohighlight">\(\alpha = J_2/J_1\)</span>, and the fraction of flux through <span class="math notranslate nohighlight">\(J_3\)</span> be given by <span class="math notranslate nohighlight">\(1 - \alpha = J_3/J_1\)</span>. Let us carry out the following thought experiment:</p>
+<ol class="arabic simple">
+<li><p>Increase the concentration of <span class="math notranslate nohighlight">\(e_2\)</span> by <span class="math notranslate nohighlight">\(\delta e_2\)</span>. This will cause a decrease in S, an increase in <span class="math notranslate nohighlight">\(J_1\)</span> (relief of product inhibition) and a decrease in <span class="math notranslate nohighlight">\(J_3\)</span>.</p></li>
+<li><p>Restore the change in <span class="math notranslate nohighlight">\(J_1\)</span> by decreasing <span class="math notranslate nohighlight">\(s_3\)</span> such that S is restored to its pre-perturbation state. At the end of the thought experiment, <span class="math notranslate nohighlight">\(\delta s = 0\)</span>.</p></li>
+<li><p>Since we have not changed <span class="math notranslate nohighlight">\(e_1\)</span> and <span class="math notranslate nohighlight">\(\delta s = 0\)</span>, it must be the case that <span class="math notranslate nohighlight">\(\delta J_1 = 0\)</span>.</p></li>
+</ol>
+<p>From this experiment we can write down the system and local equations. The system equation is given by:</p>
+<div class="math notranslate nohighlight">
+\[C^{J_1}_{e_2} \frac{\delta e_2}{e_2} + C^{J_1}_{e_3} \frac{\delta e_3}{e_3} = \frac{\delta J_1}{J_1}  = 0\]</div>
+<p>Note that the system equation only has two terms because we did not change Ep{1}. The local equations are quite simple because <span class="math notranslate nohighlight">\(\delta s = 0\)</span> and as before we assume that <span class="math notranslate nohighlight">\(\varepsilon^v_{e_i} = 1\)</span>., therefore:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\delta v_2}{v_2} = \frac{\delta e_2}{e_2} \quad\text{and}\quad \frac{\delta v_3}{v_3} = \frac{\delta e_3}{e_3}\]</div>
+<p>By substitution, the system equation can be written as:</p>
+<div class="math notranslate nohighlight">
+\[C^{J_1}_{e_2} \frac{\delta v_2}{v_2} + C^{J_1}_{e_3} \frac{\delta v_3}{v_3} = 0\]</div>
+<p>Since $delta J_1 = 0 $, it must be the case that the net change in flux downstream of S must also be zero. That is, <span class="math notranslate nohighlight">\(\delta v_2 + \delta v_3 = 0\)</span>, or <span class="math notranslate nohighlight">\(\delta v_2 = -\delta v_3\)</span>. We
+can therefore eliminate the <span class="math notranslate nohighlight">\(\delta v_3\)</span> term:</p>
+<div class="math notranslate nohighlight">
+\[C^{J_1}_{e_2} \frac{\delta v_2}{v_2} - C^{J_1}_{e_3} \frac{\delta v_2}{v_2} \frac{v_2}{v_3} = 0\]</div>
+<p>Canceling terms we obtain:</p>
+<div class="math notranslate nohighlight">
+\[C^{J_1}_{e_2}  - C^{J_1}_{e_3}  \frac{v_2}{v_3} = 1\]</div>
+<p>We can substitute the absolute rates, <span class="math notranslate nohighlight">\(v_2\)</span> and <span class="math notranslate nohighlight">\(v_3\)</span> with the fractional rates, <span class="math notranslate nohighlight">\(\alpha ` and `1-\alpha\)</span> to give:</p>
+<div class="math notranslate nohighlight">
+\[C^{J_1}_{e_2}  - C^{J_1}_{e_3}  \frac{\alpha}{1-\alpha} = 0\]</div>
+<p>One final rearrangement yields:</p>
+<div class="math notranslate nohighlight">
+\[C^{J_1}_{e_2} (1-\alpha)  - C^{J_1}_{e_3}  \alpha = 0\]</div>
+<p>This result is called the <strong>flux branch point theorem</strong>. We can derive similar theorems with respect to <span class="math notranslate nohighlight">\(J_2\)</span> and <span class="math notranslate nohighlight">\(J_3\)</span>. In each case we carry out
+the same thought experiment such that the reference flux, <span class="math notranslate nohighlight">\(J_2\)</span> or <span class="math notranslate nohighlight">\(J_3\)</span>, is unchanged. The two additional theorems are given below with respect to <span class="math notranslate nohighlight">\(J_2\)</span> and <span class="math notranslate nohighlight">\(J_3\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[C^{J_2}_{e_1} (1 - \alpha) + C^{J_2}_{e_3} = 0\]</div>
+<div class="math notranslate nohighlight">
+\[C^{J_3}_{e_1} \alpha + C^{J_3}_{e_2} = 0\]</div>
+<p>We can also derive, using the same thought experiment, branch point theorems with respect to the species concentration, S if we only perturb <span class="math notranslate nohighlight">\(e_2\)</span> and <span class="math notranslate nohighlight">\(e_1\)</span>. This time the system equation is:</p>
+<div class="math notranslate nohighlight">
+\[C^{s}_{e_2} \frac{\delta e_2}{e_2} + C^{s}_{e_3} \frac{\delta e_3}{e_3} = \frac{\delta s}{s}  = 0\]</div>
+<p>Substituting in the same local equations as before and noting that $delta v_2 = -delta v_3$, we obtain after some rearrangement:</p>
+<div class="math notranslate nohighlight">
+\[C^s_{e_2} (1 - \alpha) + C^s_{e_3} \alpha = 0\]</div>
+<p>This result is known as the {bfseries concentration branch point theorem} and it is very similar to the flux branch point theorem. There are also a set of variants that correspond
+to the concentration branch theorems for changes to <span class="math notranslate nohighlight">\(e_1\)</span> and $e_3$ and <span class="math notranslate nohighlight">\(e_1\)</span> and <span class="math notranslate nohighlight">\(e_2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[C^s_{e_1} (1 - \alpha) + C^{s}_{e_3} = 0\]</div>
+<div class="math notranslate nohighlight">
+\[C^s_{e_1} \alpha + C^s_{e_2} = 0\]</div>
+<p>We can write out the theorems in matrix form using the theorems expressed in terms of <span class="math notranslate nohighlight">\(J_2\)</span>; this includes one summation, one connectivity and one branch theorem.</p>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="linearPathway.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3.5. </span>Linear Pathways</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="negativeFeedback.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.7. </span>Negative Feedback</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Herbert Sauro
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023, Herbert Sauro.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

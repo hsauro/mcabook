@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Elasticities &#8212; MCA Book v0.1</title>
+    <title>4.2. System Equation &#8212; MCA Book v0.1</title>
   
   
   
@@ -19,34 +19,34 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'elasticities';</script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Introduction" href="intro.html" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'advanced/systemEquation';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.3. Stability" href="stability.html" />
+    <link rel="prev" title="4.1. Stoichiometry Matrix" href="stoichiometryMatrix.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -83,7 +83,7 @@
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="search.html"
+      action="../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -122,7 +122,7 @@
 
   
 
-<a class="navbar-brand logo" href="index.html">
+<a class="navbar-brand logo" href="../index.html">
   
   
   
@@ -136,8 +136,32 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Elasticities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../summaryResults.html">1. Essential Results</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../introductoryTopics/index.html">2. Quickstart Topics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introductoryTopics/controlCoefficients.html">2.1. Control Coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introductoryTopics/elasticities.html">2.2. Elasticities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introductoryTopics/responseCoefficients.html">2.3. Response Coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introductoryTopics/linearPathway.html">2.4. Linear Pathway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introductoryTopics/negativeFeedback.html">2.5. Negative Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../intermediate/index.html">3. Intermediate Topics</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intermediate/controlCoefficients.html">3.1. Control Coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intermediate/elasticities.html">3.2. Elasticities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intermediate/summationTheorems.html">3.3. Summation Theorems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intermediate/connectivityTheorems.html">3.4. Connectivity Theorems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intermediate/linearPathway.html">3.5. Linear Pathways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intermediate/branchedPathway.html">3.6. Branched Pathways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intermediate/negativeFeedback.html">3.7. Negative Feedback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intermediate/cycles.html">3.8. Cycles</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">4. Advanced Topics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="stoichiometryMatrix.html">4.1. Stoichiometry Matrix</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2. System Equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stability.html">4.3. Stability</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -192,7 +216,7 @@
       
       
       
-      <li><a href="_sources/elasticities.rst" target="_blank"
+      <li><a href="../_sources/advanced/systemEquation.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -274,7 +298,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Elasticities</h1>
+    <h1>System Equation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -288,46 +312,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="elasticities">
-<h1>Elasticities<a class="headerlink" href="#elasticities" title="Permalink to this heading">#</a></h1>
-<div class="math notranslate nohighlight">
-\[\varepsilon^v_x = \frac{\partial v}{\partial x} \frac{x}{v}\]</div>
-<p>Here is some inline math <span class="math notranslate nohighlight">\(\psi(r) = \exp(-2r)\)</span></p>
-<p>Here is some inline math <span class="math notranslate nohighlight">\(\psi(r) = \exp(-2r)\)</span></p>
-<p>Display math</p>
-<div class="math notranslate nohighlight">
-\[\psi(r) = e^{-2r}\]</div>
-<p>A more complex version:</p>
-<div class="math notranslate nohighlight" id="fourier-transform">
-<span id="equation-fourier-transform"></span><span class="eqno">(1)<a class="headerlink" href="#fourier-transform" title="Permalink to this equation">#</a></span>\[(\mathcal{F}f)(y)
- = \frac{1}{\sqrt{2\pi}^{\ n}}
-   \int_{\mathbb{R}^n} f(x)\,
-   e^{-\mathrm{i} y \cdot x} \,\mathrm{d} x.\]</div>
-<div class="figure" style="text-align: center"><p><img  src="_images/tikz-e2cf43952a5587bba7ad724c8da9e65addd285eb.svg" alt="Figure made with TikZ" /></p>
-</div><p><span class="caption-text">Code </span></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
-<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Printing a list: &#39;</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><span class="caption-text">Results</span></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Printing a list:  [1, 2, 3, 4, 5, 6]
-</pre></div>
-</div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This will hide the Code and Results text - and foo is 32
-</pre></div>
-</div>
-<p>Running a simulation</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tellurium</span> <span class="k">as</span> <span class="nn">te</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">te</span><span class="o">.</span><span class="n">loada</span> <span class="p">(</span><span class="s1">&#39;&#39;&#39;A -&gt; B; k1*A; k1=0.1; A = 10&#39;&#39;&#39;</span><span class="p">)</span>
-<span class="n">m</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">simulate</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">r</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>(<a class="reference download internal" download="" href="_downloads/480856e9c6ec907e2bae8a40c7491399/elasticities-1.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="_downloads/019bbd57dd827a0c9b0142c39c45a324/elasticities-1.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="_downloads/071e2a0ce2333f8d73e6559cb1210dda/elasticities-1.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="_downloads/29362b8384ce49406e59188384f759d6/elasticities-1.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
-<figure class="align-default">
-<img alt="_images/elasticities-1.png" class="plot-directive" src="_images/elasticities-1.png" />
-</figure>
+  <section id="system-equation">
+<h1><span class="section-number">4.2. </span>System Equation<a class="headerlink" href="#system-equation" title="Permalink to this heading">#</a></h1>
+<p>Advanced topic one</p>
 </section>
 
 
@@ -342,13 +329,22 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="stoichiometryMatrix.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction</p>
+        <p class="prev-next-title"><span class="section-number">4.1. </span>Stoichiometry Matrix</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="stability.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4.3. </span>Stability</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -400,8 +396,8 @@ By Herbert Sauro
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
