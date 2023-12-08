@@ -11,10 +11,14 @@ Introduction to Metabolic Control Analysis
    :numbered:
    :caption: Contents:
 
+   prerequisites
+   notation
    summaryResults
    introductoryTopics/index
    intermediate/index
    advanced/index
+   software/index
+   books/index
 
 Metabolic control analysis (MCA) is a mathematical framework for describing the behavior of metabolic, signaling, and genetic pathways. MCA quantifies how variables, such as 
 fluxes and species concentrations, depend on network parameters. In particular, it is able to describe how network-dependent properties, called control coefficients, 

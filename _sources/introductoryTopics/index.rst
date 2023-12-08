@@ -10,9 +10,9 @@ Introductory Topics
    :maxdepth: 1
    :caption: Contents:
 
+   responseCoefficients
    controlCoefficients
    elasticities
-   responseCoefficients
    linearPathway
    negativeFeedback
 
