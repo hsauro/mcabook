@@ -13,7 +13,7 @@ Introduction to Metabolic Control Analysis
 
    prerequisites
    notation
-   summaryResults
+   quickTour
    introductoryTopics/index
    intermediate/index
    advanced/index
