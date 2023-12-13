@@ -3,6 +3,9 @@
 Quick Tour
 ==========
 
+This chapter is meant to give you a flavour of what metabolic control analysis is together with a few of the main results 
+that might be of interest to someone coming to this topic the first time. 
+
 Biochemical systems
 -------------------
 
