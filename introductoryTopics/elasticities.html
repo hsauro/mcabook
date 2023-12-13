@@ -1,9 +1,8 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
@@ -29,18 +28,18 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=362ab14a" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css?v=7f9a90b1" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
   <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'introductoryTopics/elasticities';</script>
@@ -326,9 +325,33 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="elasticities">
-<h1><span class="section-number">4.3. </span>Elasticities<a class="headerlink" href="#elasticities" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">4.3. </span>Elasticities<a class="headerlink" href="#elasticities" title="Link to this heading">#</a></h1>
+<p>Another way to study a biochemical pathway is to look at the individual steps. This
+has often been the domain of enzyme kineticists. For example, give the pathway shown
+below:</p>
 <div class="math notranslate nohighlight">
-\[C^s_e = \frac{\partial s}{\partial e} \frac{e}{s}\]</div>
+\[X_o \stackrel{v_1}{\longrightarrow} S_1 \stackrel{v_2}{\longrightarrow} S_2 \stackrel{v_3}{\longrightarrow} X_1\]</div>
+<p>we could extract the second step and study it in isolation away from the rest of the pathway:</p>
+<div class="math notranslate nohighlight">
+\[S_1 \stackrel{v_2}{\longrightarrow} S_2\]</div>
+<p>One way to study this reaction is to look at how the reaction rate <span class="math notranslate nohighlight">\(v_2\)</span> changes
+as a function of the substrate <span class="math notranslate nohighlight">\(S_1\)</span> and product <span class="math notranslate nohighlight">\(S_2\)</span>. For example, we could change
+the substrate by an amount <span class="math notranslate nohighlight">\(\delta s_1\)</span> and observe the change rate <span class="math notranslate nohighlight">\(v_2\)</span>. This
+would given us an indication how how much <span class="math notranslate nohighlight">\(S_1\)</span> influences the reaction rate. As
+before we can examine the relative change in reaction rate given a relative change
+in substrate. We can express this as follows:</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon^v_s = \frac{\partial v_2}{\partial s_1} \frac{s_1}{v_2}\]</div>
+<p>We call this measure the <strong>elasticity</strong> coefficient. However changes in the
+product can also affect the reaction rate. This means there will also an elastciity
+for the product <span class="math notranslate nohighlight">\(S_2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon^v_s = \frac{\partial v_2}{\partial s_2} \frac{s_2}{v_2}\]</div>
+<p>In fact, a chemical reaction will have as many elasticities as there are factors
+as might infuence the reaction rate. For an enzyme catalyzed reaction, there are
+a number of elasticities to consider other than the substrate(s) and product(s) elasticities.</p>
+<p>For example, the reaction rate of an enzyme catlayzed reaction is also affected
+by the concentration of enzyme and any regulators of the enzyme.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This function is not suitable for sending spam e-mails.</p>

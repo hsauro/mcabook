@@ -1,9 +1,8 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
@@ -29,18 +28,18 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=362ab14a" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css?v=7f9a90b1" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
   <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'introductoryTopics/responseCoefficients';</script>
@@ -336,7 +335,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="response-coefficients">
-<h1><span class="section-number">4.1. </span>Response Coefficients<a class="headerlink" href="#response-coefficients" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">4.1. </span>Response Coefficients<a class="headerlink" href="#response-coefficients" title="Link to this heading">#</a></h1>
 <p>In any system we choose to study there will be qunatities which we can measure and other quantities which we can change.</p>
 <p>In a metabolite pathway the kinds of qunatiies we can measure include the pathwy flux and the pathwya metabolite concentations.
 If the pathwya understudy is sigaling network or a gen resulatory network we migth instead meaure the
@@ -348,7 +347,7 @@ inhibitors or drug molecules, and parmaeters internal to a cell such as the leve
 <p>One of the core ideas in MCA is meauring how much a variable such as a flux, metabolite or
 protein (if its a signaling network) is influenced by a parmaeter such as an inhibitor.</p>
 <section id="measuring-influence">
-<h2><span class="section-number">4.1.1. </span>Measuring Influence<a class="headerlink" href="#measuring-influence" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.1.1. </span>Measuring Influence<a class="headerlink" href="#measuring-influence" title="Link to this heading">#</a></h2>
 <p>When we talk about influence we are primarly going to consider how a given parameter
 influences the steady-state. Therefore, in all subsequent discussions we will be assuming our pathway
 is at steady-state.</p>
@@ -379,16 +378,30 @@ reduce the size of perturbation such that in the limit, we obtain a ratio of dif
 independent of the size of the perturbation. We call this ratio the response coefficient, <span class="math notranslate nohighlight">\(R^{s_3}_{I}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[R^{s_3}_{I} = \frac{d s_3}{d I} \frac{I}{J}\]</div>
+<p>This form can still be interpreted, at least aproximately, as a ratio of percentage changes.</p>
+<div class="admonition-definition admonition">
+<p class="admonition-title">Definition</p>
+<p>The Flux Response Coefficient:</p>
 <div class="math notranslate nohighlight">
-\[C^s_e = \frac{\partial s}{\partial e} \frac{e}{s}\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This function is not suitable for sending spam e-mails.</p>
+\[R^J_I = \frac{dJ}{dI} \frac{I}{J} \approx \frac{J\%}{I\%}\]</div>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This function is not suitable for sending spam e-mails.</p>
+<div class="admonition-definition admonition">
+<p class="admonition-title">Definition</p>
+<p>The Concentration Response Coefficient:</p>
+<div class="math notranslate nohighlight">
+\[R^s_I = \frac{ds}{dI} \frac{I}{s}  \approx \frac{J\%}{I\%}\]</div>
 </div>
+<p><strong>Example</strong></p>
+<p>When the concentration of a drug is increased from 2 mM to 2.5 mM, the cocentration
+of a given metabolite changes its steady-state level from 15 mM to 18 mM. Estimate
+the response cofficient.</p>
+<p>Since the percentage change in the metabolite is (18-15)/18 and the percntage change in drug is
+(2.5-2.0)/2, then the response coefficient is estimated to be:</p>
+<div class="math notranslate nohighlight">
+\[R = ((18-15)/18)/(2.5-2.0)/2 = 0.66667\]</div>
+<p>This means that a 1% change in the drug concentration will lead to a 0.66667% change in the metabolite.</p>
+<p>If a given pathway has <span class="math notranslate nohighlight">\(m\)</span> metabolites then it means there will be <span class="math notranslate nohighlight">\(m\)</span> response coefficients
+with respect to a given external factor.</p>
 </section>
 </section>
 

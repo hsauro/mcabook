@@ -39,13 +39,10 @@ A similar kind of measurement can be made with respect to the metabolite levels 
 
 Given that there are four enzymes there will in total be twelve concentraton control coeffiicients.
 
-However since there thereis only a single flux since all step carries the same flux, there will only be four flux control coefficients. 
+Since all steps carry the same flux at steady-state, there will only be four flux control 
+coefficients, one for each enzyme. 
 
 
-
-.. math::
-
-   C^s_e = \frac{\partial s}{\partial e} \frac{e}{s}
 
 .. note::
 

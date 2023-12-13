@@ -19,13 +19,13 @@ Biology
 -------
 
 - Knowledge of metabolic pathways, the role of enzymes in metabolic pathways, knowledge of allosteric control. Some knowledge of protein signaling networks for more advanced topics.
-- Stoichiometric networks, mass-balance equations to formulate metabolic models.
+- Stoichiometric networks, mass-balance equations to formulate metabolic models as differential equations.
 - Concept of the steady state, concentrations and fluxes, boundary and floating species.
 
 Mathematics
 -----------
 
 - Elementary differential calculus, understanding partial derivatives and differential equations, logarithms.
-- For the advanced section some knowledge of matrices and vectors, matrix addition, multiplication and inversion, knowledge of eigenvalues.
+- For the advanced section some knowledge of matrices and vectors, matrix addition, multiplication and matrix inversion, knowledge of eigenvalues.
 
 

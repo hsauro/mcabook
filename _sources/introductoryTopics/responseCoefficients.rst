@@ -60,22 +60,36 @@ independent of the size of the perturbation. We call this ratio the response coe
 
 .. math :: R^{s_3}_{I} = \frac{d s_3}{d I} \frac{I}{J}
 
+This form can still be interpreted, at least aproximately, as a ratio of percentage changes.
 
+.. admonition:: Definition
 
+   The Flux Response Coefficient:
+   
+   .. math:: R^J_I = \frac{dJ}{dI} \frac{I}{J} \approx \frac{J\%}{I\%}
 
+.. admonition:: Definition
 
+  The Concentration Response Coefficient:
+   
+  .. math:: R^s_I = \frac{ds}{dI} \frac{I}{s}  \approx \frac{J\%}{I\%}
 
-.. math::
+**Example**
 
-   C^s_e = \frac{\partial s}{\partial e} \frac{e}{s}
+When the concentration of a drug is increased from 2 mM to 2.5 mM, the cocentration
+of a given metabolite changes its steady-state level from 15 mM to 18 mM. Estimate
+the response cofficient. 
 
-.. note::
+Since the percentage change in the metabolite is (18-15)/18 and the percntage change in drug is 
+(2.5-2.0)/2, then the response coefficient is estimated to be:
 
-   This function is not suitable for sending spam e-mails.
+.. math:: R = ((18-15)/18)/(2.5-2.0)/2 = 0.66667
 
-.. warning::
+This means that a 1\% change in the drug concentration will lead to a 0.66667\% change in the metabolite.
 
-   This function is not suitable for sending spam e-mails.
+If a given pathway has `m` metabolites then it means there will be `m` response coefficients 
+with respect to a given external factor.
+
 
 
 
