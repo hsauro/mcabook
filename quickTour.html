@@ -471,18 +471,33 @@ S_1 \stackrel{v_1}{\rightarrow} S_2 \stackrel{v_2}{\rightarrow} S_3
 <p>As you can see it looks quite different. Both rates appear to go to zero.</p>
 <p>What has happened is that the system has reached:</p>
 <p class="centered">
-<strong>Thermodynamic equilibrium.</strong></p><p>This state is characterized by unchanging concentrations and all reactions rate equal to zero. We can summarize it by:</p>
+<strong>Thermodynamic equilibrium.</strong></p><p>This state is characterized by unchanging concentrations and all reactions rates equal to zero. We can summarize it by:</p>
 <div class="math notranslate nohighlight">
 \[\frac{dS_i}{dt} = 0;\quad v_i = 0\]</div>
 </section>
 <section id="the-steady-state">
 <h2><span class="section-number">3.6. </span>The steady-state<a class="headerlink" href="#the-steady-state" title="Link to this heading">#</a></h2>
-<p>However, pathways inside cells are rarely if ever at thermodynamic equilibrium. Instead they are, what we call at:</p>
-<p>centerline{bf Steady state.}</p>
-<p>When we are at steady-state the concentrations are unchanging {bf but} but reaction rates are {bf not zero}:</p>
+<p>However, pathways inside cells are rarely, if ever, at thermodynamic equilibrium. Instead they are at:</p>
+<p class="centered">
+<strong>Steady-state.</strong></p><p>At steady-state the concentrations are also unchanging but the
+reaction rates are no longer zero. In other words there is a continous flow of mass across the pathway ev en though concentratons
+are unchaning.  We can write this condition as:</p>
 <div class="math notranslate nohighlight">
-\[\diffdisp{S_i}{t} = 0;\quad v_i \neq 0\]</div>
-<p>In order to mimic a pathway inside a cell we must clamp (i.e fix) the boundaries of the pathway. In this case we would clamp <span class="math notranslate nohighlight">\(S_1\)</span> and <span class="math notranslate nohighlight">\(S_3\)</span> since the are the edges of the pathway.
+\[\frac{dS_i}{dt} = 0;\quad v_i \neq 0\]</div>
+<p>The simple analogy is where one might have a tank of water as shown in the figure below.</p>
+<a class="reference internal image-reference" href="_images/SingleTank.png"><img alt="_images/SingleTank.png" class="align-center" src="_images/SingleTank.png" style="width: 200px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>In this digaram, water flows continuously into the top of
+the tank at a constant rate <span class="math notranslate nohighlight">\(Q_1\)</span>. The tank has an outlet pipe at the bottom that allows water to empty from the tank to waste at a rate <span class="math notranslate nohighlight">\(Q_2\)</span>.
+If we assume
+that the water flow out of a tank, <span class="math notranslate nohighlight">\(Q_2\)</span>, is proportional to the height of water in the tank, then it is not difficult to
+imagine that as the tank fills, the emptying rate eventually reaches the same rate at which the water enters the
+tank. At this point the height of water stops changing and we say the system has reached a steady-state. Although the height of water
+no longer changes, there is still  water  flowing continuously from the inlet pipe and out throught outlet pipe.</p>
+<p>A similar situation can be had with a biochemical pathway. In order to achieve a steady-state we must clamp (i.e fix) the boundaries
+of the pathway. In the the case of the two step pathway, we would clamp <span class="math notranslate nohighlight">\(S_1\)</span> and <span class="math notranslate nohighlight">\(S_3\)</span> since they are the edges of the pathway.
 This will allow <span class="math notranslate nohighlight">\(S_2\)</span> to reach a steady-state.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tellurium</span> <span class="k">as</span> <span class="nn">te</span>
 

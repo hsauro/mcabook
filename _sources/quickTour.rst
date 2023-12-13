@@ -9,7 +9,6 @@ that might be of interest to someone coming to this topic the first time.
 Biochemical systems
 -------------------
 
-
 A biochemical system is a series of linked chemical reactions, often enzyme catalyzed. For example:
 
 .. math:: 
@@ -158,7 +157,7 @@ What has happened is that the system has reached:
 
 .. centered:: Thermodynamic equilibrium.
 
-This state is characterized by unchanging concentrations and all reactions rate equal to zero. We can summarize it by:
+This state is characterized by unchanging concentrations and all reactions rates equal to zero. We can summarize it by:
 
 .. math:: \frac{dS_i}{dt} = 0;\quad v_i = 0 
 
@@ -166,15 +165,34 @@ This state is characterized by unchanging concentrations and all reactions rate 
 The steady-state
 ----------------
 
-However, pathways inside cells are rarely if ever at thermodynamic equilibrium. Instead they are, what we call at:
+However, pathways inside cells are rarely, if ever, at thermodynamic equilibrium. Instead they are at:
 
-\centerline{\bf Steady state.}
+.. centered:: Steady-state.
 
-When we are at steady-state the concentrations are unchanging {\bf but} but reaction rates are {\bf not zero}:
+At steady-state the concentrations are also unchanging but the 
+reaction rates are no longer zero. In other words there is a continous flow of mass across the pathway ev en though concentratons
+are unchaning.  We can write this condition as:
 
-.. math:: \diffdisp{S_i}{t} = 0;\quad v_i \neq 0
+.. math:: \frac{dS_i}{dt} = 0;\quad v_i \neq 0
 
-In order to mimic a pathway inside a cell we must clamp (i.e fix) the boundaries of the pathway. In this case we would clamp `S_1` and `S_3` since the are the edges of the pathway. 
+The simple analogy is where one might have a tank of water as shown in the figure below.
+
+.. image:: images\\SingleTank.png
+  :width: 200
+  :align: center
+
+|
+
+In this digaram, water flows continuously into the top of
+the tank at a constant rate `Q_1`. The tank has an outlet pipe at the bottom that allows water to empty from the tank to waste at a rate `Q_2`. 
+If we assume 
+that the water flow out of a tank, `Q_2`, is proportional to the height of water in the tank, then it is not difficult to 
+imagine that as the tank fills, the emptying rate eventually reaches the same rate at which the water enters the 
+tank. At this point the height of water stops changing and we say the system has reached a steady-state. Although the height of water
+no longer changes, there is still  water  flowing continuously from the inlet pipe and out throught outlet pipe.
+
+A similar situation can be had with a biochemical pathway. In order to achieve a steady-state we must clamp (i.e fix) the boundaries 
+of the pathway. In the the case of the two step pathway, we would clamp `S_1` and `S_3` since they are the edges of the pathway. 
 This will allow `S_2` to reach a steady-state.
 
 .. plot::
