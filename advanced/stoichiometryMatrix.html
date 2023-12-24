@@ -40,6 +40,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=362ab14a" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css?v=7f9a90b1" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=963230cf" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
@@ -50,6 +51,7 @@
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'advanced/stoichiometryMatrix';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -330,7 +332,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-matrix">6.1.1. Link Matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moiety-conserved-cycles">6.1.1. Moiety Conserved Cycles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-laws">6.1.2. Conservation Laws</a></li>
 </ul>
             </nav>
         </div>
@@ -344,8 +347,134 @@ document.write(`
                   
   <section id="stoichiometry-matrix">
 <h1><span class="section-number">6.1. </span>Stoichiometry Matrix<a class="headerlink" href="#stoichiometry-matrix" title="Link to this heading">#</a></h1>
-<section id="link-matrix">
-<h2><span class="section-number">6.1.1. </span>Link Matrix<a class="headerlink" href="#link-matrix" title="Link to this heading">#</a></h2>
+<p>When describing multiple reactions in a network, it is convenient to represent the stoichiometries in a compact form called the {bfseries stoichiometry matrix}. Traditionally the matrix is denoted by <span class="math notranslate nohighlight">\(\bf N\)</span>, where the symbol <span class="math notranslate nohighlight">\({\bf N}\)</span> refers to number. The stoichiometry matrix is a <span class="math notranslate nohighlight">\(m\)</span> row by <span class="math notranslate nohighlight">\(n\)</span> column matrix, where <span class="math notranslate nohighlight">\(m\)</span> is the number of species and <span class="math notranslate nohighlight">\(n\)</span> the number of reactions:</p>
+<div class="math notranslate nohighlight">
+\[{\bf N} = m \times n\ \mathrm{matrix}\]</div>
+<p>The columns of the stoichiometry matrix correspond to the individual chemical reactions in the network. The rows correspond to the molecular species, with one row per species. Thus, the intersection of a row and column in the matrix indicates whether a certain species takes part in a particular reaction or not. The sign of the element determines whether there is a net loss or gain of substance, and the magnitude describes the relative quantity of substance taking part in the reaction.</p>
+<p>The elements of the stoichiometry matrix do not concern themselves with the rate of reaction. This latter point is particularly important because various stoichiometric analyses can be carried out purely on the stoichiometry without any reference to reaction rate laws.</p>
+<div class="admonition-olive admonition">
+<p class="admonition-title">Stoichiometrix Matrix</p>
+<p>The stoichiometric matrix is not concerned with describing reaction rates, it only describes the stoichiometric structure of the network.</p>
+</div>
+<p>In general, the stoichiometry matrix has the form:</p>
+<a class="reference internal image-reference" href="../_images/stoichiometrymatrix.png"><img alt="../_images/stoichiometrymatrix.png" class="align-center" src="../_images/stoichiometrymatrix.png" style="width: 300px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>where <span class="math notranslate nohighlight">\(c_{ij}\)</span> is the stoichiometry coefficient for the <span class="math notranslate nohighlight">\(i^{\text{th}}\)</span> species and <span class="math notranslate nohighlight">\(j^{\text{th}}\)</span> reaction. The stoichiometry matrix is generally a lossy representation. That is, it is not always possible to revert back to the original biochemical network from which the matrix was derived. For example, consider the simple stoichiometry matrix:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}{\bf N} =
+    \begin{bmatrix}
+    -1 &amp; \phantom{-}0 \\
+    \phantom{-}1 &amp; -1 \\
+    \phantom{-}0 &amp; \phantom{-}1
+    \end{bmatrix}\end{split}\]</div>
+<p>The most obvious network that this matrix could have been derived from is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+ \text{A} &amp;\longrightarrow \text{B} \\
+ \text{B} &amp;\longrightarrow \text{C}
+\end{align*}\end{split}\]</div>
+<p>But an equally plausible network is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+ 2 \text{A} &amp;\longrightarrow \text{A} + \text{B} \\
+ \text{B} &amp;\longrightarrow \text{C}
+\end{align*}\end{split}\]</div>
+<p>It is not always possible from the stoichiometry matrix alone to determine the original network.</p>
+<p><strong>Example:</strong></p>
+<p>Write out the stoichiometry matrix for the simple chain of reactions which has five molecular species and four reactions as shown below. The four reactions are labeled, <span class="math notranslate nohighlight">\(v_1\)</span> to <span class="math notranslate nohighlight">\(v_4\)</span>.</p>
+<div class="figure" style="text-align: center"><p><img  src="../_images/tikz-6988898f3b1aa394ef8d0491e7263052a9122bc6.svg" alt="Figure made with TikZ" /></p>
+</div><p>The stoichiometry matrix for this simple system is given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}{\bf N} = \begin{array}{c}
+        { \!\!\!\!\! v_1 \ \ \ \ v_2 \ \ \ \ \ v_3 \ \ \ \ v_4} \ \ \ \\
+        \left[ \begin{array}{rrrr}
+          -1 &amp;  0 &amp;  0 &amp; 0 \\
+           1 &amp; -1 &amp;  0 &amp; 0 \\
+           0 &amp;  1 &amp; -1 &amp; 0 \\
+           0 &amp;  0 &amp;  1 &amp; -1 \\
+           0 &amp;  0 &amp;  0 &amp; 1 \\
+        \end{array} \right]
+         \begin{array}{l}
+                  \text{S}_1 \\
+                  \text{S}_2 \\
+                  \text{S}_3 \\
+                  \text{S}_4 \\
+                  \text{S}_5 \\
+               \end{array}
+      \end{array}\end{split}\]</div>
+<p>The rows and columns of the matrix have been labeled for convenience. Normally labels are absent.</p>
+<p><strong>Example:</strong></p>
+<p>Write out the stoichiometry matrix for the multibranched pathway shown below:</p>
+<div class="figure" style="text-align: center"><p><img  src="../_images/tikz-82d0e9d38176c7da92c844c28414b141140e87a3.svg" alt="Figure made with TikZ" /></p>
+</div><div class="math notranslate nohighlight">
+\[\begin{split}{\bf N} = \begin{array}{c}
+      { \!\!\!\!\!\!\!\!\! v_1 \ \ \ v_2 \ \ \ \ \ v_3 \ \ \ \ v_4} \ \ \ \ v_5 \ \ \ \ \\
+      \left[ \begin{array}{rrrrr}
+         1 &amp; -1 &amp; -1 &amp;  0 &amp;  0 \\
+         0 &amp;  0 &amp;  1 &amp; -1 &amp; -1 \\
+      \end{array} \right]
+       \begin{array}{l}
+                \text{S}_1 \\
+                \text{S}_2 \\
+              \end{array}
+    \end{array}\end{split}\]</div>
+<section id="moiety-conserved-cycles">
+<h2><span class="section-number">6.1.1. </span>Moiety Conserved Cycles<a class="headerlink" href="#moiety-conserved-cycles" title="Link to this heading">#</a></h2>
+<p>Many cell processes operate on different time scales. For example, metabolic processes tend to operate on a faster scale than protein synthesis and degradation. Such time scale differences have a number of implications to model builders, software designers, and model behavior. In this chapter we will briefly examine some of these aspects in relation to species conservation laws.</p>
+<p>To introduce this topic, consider a simple protein phosphorylation cycle such as the one shown in the Figure below. This shows a protein undergoing phosphorylation (upper limb) and dephosphorylation (lower limb) via a kinase and phosphatase, respectively.</p>
+<a class="reference internal image-reference" href="../_images/simpleConservationCycle.png"><img alt="../_images/simpleConservationCycle.png" class="align-center" src="../_images/simpleConservationCycle.png" style="width: 260px;" /></a>
+<p>The depiction in the Figure above is a simplification. The ATP used during phosphorylation and the release of free phosphate during the dephosphorylation event are not shown. In addition, synthesis and degradation of protein is also absent. In many cases we can leave these aspects out of the picture. ATP for instance is held at a relatively constant level by strong homeostatic forces from metabolism so that within the context of the cycle, changes in ATP isn’t something we must worry about. More interesting is that within the time scale of phosphorylation and dephosphorylation, we can assume that the rate of protein synthesis and degradation is negligible (Figure~ref{fig:CovalentProteinCycleProteinSynthesis}). This assumption is more significant and leads to the emergence of a new property called moiety conservation.</p>
+<a class="reference internal image-reference" href="../_images/CovalentProteinCycleProteinSynthesis.png"><img alt="../_images/CovalentProteinCycleProteinSynthesis.png" class="align-center" src="../_images/CovalentProteinCycleProteinSynthesis.png" style="width: 260px;" /></a>
+<p>Phosphorylation and dephosphorylation cycle that also includes the slower process of protein synthesis and degradation. We assume that the phosphorylated and unphosphorylated protein can be degraded but only the unphosphorylated protein is synthesized.</p>
+<p>In chemistry a moiety is described as a subgroup of a larger molecule. In this case the moiety is a protein. During the interconversion between the phosphorylated and unphosphorylated states, the amount of moiety (protein) remains constant. More abstractly we can draw a cycle in the following way (Figure~ref{fig:SimpleConservedCycleA}), where S`_1` and S`_2` are the cycle species:</p>
+<div class="figure" style="text-align: center"><p><img  src="../_images/tikz-0070b64bc621adf869950c77fef266210078b24c.svg" alt="Figure made with TikZ" /></p>
+</div><p>Simple conserved cycle where <span class="math notranslate nohighlight">\(S_1\)</span> + <span class="math notranslate nohighlight">\(S_2\)</span> = constant.</p>
+<p>The two species <span class="math notranslate nohighlight">\(S_1\)</span> and <span class="math notranslate nohighlight">\(S_2\)</span> are conserved because the total <span class="math notranslate nohighlight">\(S_1 + S_2\)</span> remains constant over time (at least over a time scale shorter than other processes that may be involved). Such cycles are collectively called {bfseries moiety conserved cycles}.</p>
+<div class="admonition-moieties admonition">
+<p class="admonition-title">Moieties</p>
+<p><strong>Moiety</strong>  = A subgroup of a larger molecule.</p>
+<p><strong>Conserved Moiety</strong> = A subgroup whose interconversion through a sequence of reactions leaves it unchanged.</p>
+</div>
+<p>Protein signalling pathways abound with conserved cycles such as these although many are more complex and may involve multiple phosphorylation reactions. In addition to protein networks, other pathways also possess conservation cycles. One of the earliest conservation cycles to be recognized was the adenosine triphosphate (ATP) cycle. ATP is a chain of three phosphate residues linked to a nucleoside adenosine group as shown below.</p>
+<a class="reference internal image-reference" href="../_images/ATP.png"><img alt="../_images/ATP.png" class="align-center" src="../_images/ATP.png" style="width: 280px;" /></a>
+<p>Adenosine Triphosphate: Three phosphate groups plus an adenosine subgroup.</p>
+<p>The linkage between the phosphate groups involves an unstable phosphoric acid anhydride bond. These bonds can be cleaved by hydrolysis one at a time leading to the formation of adenosine diphosphate (ADP) and adenosine monophosphate (AMP), respectively. The hydrolysis provides much of the free energy to drive endergonic processes in the cell. Given the insatiable need for energy, there is a continual and rapid interconversion between ATP, ADP and AMP as energy is released or captured. One constant during these interconversions is the amount of adenosine group. Adenosine is a conserved moiety.</p>
+<p>Over longer time scales there is also the slower process of AMP degradation and biosynthesis via the purine nucleotide pathway; but for many models, we assume that this process is very slow compared to ATP turnover by energy metabolism.</p>
+<a class="reference internal image-reference" href="../_images/ATP_ADP_AMP_1.png"><img alt="../_images/ATP_ADP_AMP_1.png" class="align-center" src="../_images/ATP_ADP_AMP_1.png" style="width: 500px;" /></a>
+<p>The interconversion of ATP, ADP and AMP is generally considered fast in comparison to the slow process of synthesis and degradation of AMP.</p>
+<p>There are many other examples of conserved moieties such enzyme/enzyme-substrate complexes, NAD/NADHindex{NAD/NADH}, phosphated to their net synthesis and degradation. We should emphasize that in reality, conserved moieties do not exist since all molecular subgroups will at some point be subject to synthesis and degradation. However, over sufficiently short time scales, the sum total of these groups can be considered constant.</p>
+<a class="reference internal image-reference" href="../_images/ATP_ADP_AMP_2.png"><img alt="../_images/ATP_ADP_AMP_2.png" class="align-center" src="../_images/ATP_ADP_AMP_2.png" style="width: 500px;" /></a>
+<p>The adenosine moiety, indicated by the boxed molecular group, is conserved during the interconversion of ATP, ADP and AMP.</p>
+</section>
+<section id="conservation-laws">
+<h2><span class="section-number">6.1.2. </span>Conservation Laws<a class="headerlink" href="#conservation-laws" title="Link to this heading">#</a></h2>
+<p>How do moiety conserved cycles laws impact the stoichiometriy matrix?</p>
+<p>Any moiety conserved cycles in a pathway results in dependent rows in the stoichiometry matrix. For example concisder the simple cycle:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}S_1 \rightarrow S_2\\S_2 \rightarrow S_1\end{aligned}\end{align} \]</div>
+<p>The stoichimetry matrix is given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}
+1 &amp; -1 \\
+-1 &amp; 1
+\end{bmatrix}\end{split}\]</div>
+<p>Looking at the two rows we can see that the second row is the same as the first row if we multily it by -1. This tells us that the second row is linearly dependent on the first row. This splits the matrix into a set of dependent and independent species. For convenience, the
+rows of the stoichiometry matrix can be reordered so that the independent rows are the top most rows. We can extract
+the top independent rows into a new matrix with the symbol <span class="math notranslate nohighlight">\({\bf N_r}\)</span>, meaning the <strong>reduced stoichiometry matrix</strong>.</p>
+<p>The number of rows in <span class="math notranslate nohighlight">\({\bf N_r}\)</span> is the rank of the stoichiometry matrix which we denote by <span class="math notranslate nohighlight">\(m_o\)</span>. The dependent rows, of which there are <span class="math notranslate nohighlight">\(m-m_o\)</span>, can be derived from <span class="math notranslate nohighlight">\({\bf N_r}\)</span>  by application of a set of elementary operations which we denote by the matrix <span class="math notranslate nohighlight">\({\bf L_o}\)</span>.</p>
+<p>The <strong>link matrix</strong> is now defined as an identity matrix of size <span class="math notranslate nohighlight">\(m_o\)</span> combined with the <span class="math notranslate nohighlight">\({\bf L_o}\)</span> matrix:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\bf L =
+ \begin{bmatrix}
+  {\bf I}_{m_o} \\[3pt]
+  {\bf L_o}
+ \end{bmatrix}\end{split}\]</div>
+<p>The full stoichiometry matrix cna then we writtin in terms of the product of the link matrix and the reduced stoichiometry matrix:</p>
+<div class="math notranslate nohighlight">
+\[\bf N = L \times N_r\]</div>
+<p>In practice the factorization of the stoichiometric matrix is accomplished using either LU or QR factorization. Most main stream modeling packages carry out this reduction in order to ensure numerical stability.</p>
 <p>Advanced topic one</p>
 </section>
 </section>
@@ -394,7 +523,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-matrix">6.1.1. Link Matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moiety-conserved-cycles">6.1.1. Moiety Conserved Cycles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-laws">6.1.2. Conservation Laws</a></li>
 </ul>
   </nav></div>
 

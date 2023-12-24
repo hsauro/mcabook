@@ -1,0 +1,11 @@
+
+div.admonition.admonition-olive {
+  border-color: hsl(60, 100%, 25%);
+}
+div.admonition.admonition-olive > .admonition-title {
+  background-color: hsl(60, 100%, 14%);
+  color: white;
+}
+div.admonition.admonition-olive > .admonition-title:after {
+  color: hsl(60, 100%, 25%);
+}
