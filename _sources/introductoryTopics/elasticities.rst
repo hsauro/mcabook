@@ -66,7 +66,14 @@ More formally we define the elasticity as follows:
 There are a couple of things to note about this definition. First we use partial derivatives to indicate that
 when we change a variable such as `s_i`, we must **keep all other potential variables constant.**
 
-The second point is that elasticities can be interpreted as a ratio of relative changes. This can be
+A second point to make is that elasticities are dimensionless quantities. 
+
+.. admonition:: Notice
+
+   Due to the scaling, the elasticity is a dimensionless quantity.
+
+
+The third point is that elasticities can be interpreted as a ratio of relative changes. This can be
 illustrated with a simple example. Let's say that given a reaction `S_1 \rightarrow S_2`, we discover that the
 elasticity `\varepsilon^v_{s_1}` has a value of 3.0.
 
@@ -158,9 +165,9 @@ This is a general result in that the elasticity for an irreversible mass-action 
 
 The elasticity can be seen as a more general way of describing the order of a reaction. 
 
-----------------------------------------------
-Elasticity of Reversible Mass-Action Reactions
-----------------------------------------------
+------------------------------------------------
+Elasticities of Reversible Mass-Action Reactions
+------------------------------------------------
 
 What about the elasticities for reversible mass-action reactions?
 
@@ -199,8 +206,74 @@ Given a modulator of a reaction, we can say that in general:
 * Negative elasticities mean: increases in the modulator **decreases** the reaction rate
 
 
+---------------------------------------------------------
+Elasticities of a Irreversible Enzyme Catalyzed Reaction
+--------------------------------------------------------
 
+Most reactions in a cell are catalyzed by enzymes. We should therefore consider what the elasticity of an enzyme catalyzed reaction might look like.
 
+The simplest rate law for a enzyme catalyzed reaction is the irreversible Michaelis-Menten rate law. This isn't a rate law one might use to describe a reaction inside a cell 
+because most reactions in a cell are not irreversible. Instead, we'd use the reversible version. For now, we'll consider the irreversible form as that is the easiest to understand.
+The equation is given by:
+
+.. math::
+   
+   v = \frac{V_m s}{K_m + s}
+   
+In this equation we have two constants, the `V_m` which represents the maximal rate the enzyme can catalyze the reaction and the `K_m`, often called the Michaelis constant is inversely related to 
+how responsive the reaction rate is to the substrate concentration. If we plot the reaction rate as a function of substrate, as shown below, this will be become clearer. 
+
+.. image:: ..\\images\\irrever_MM_plot.png
+  :width: 420
+  :align: center
+  
+The plot shows us that initially, the reaction rate appears to increase linearly as we increase the substrate concentration. However, as 
+the substrate concentration increases, the rate of increase in the reaction rate slows now, ultimately reaching a plateau at the maximal rate. This
+is when the enzyme is becomes saturate with substrate so that there is no more free enzyme left to increase the rate further. 
+
+Another way to interpreted the `K_m` is that it is the concentration of substrate that gives half the maximal velocity. That means a high `K_m` means we need a 
+high substrate concentration to reach half the maximal velocity.
+
+The elasticity can be derived as before by differentiating the rate law and scaling. First, lets obtain the derivative:
+
+.. math::
+
+   \frac{\partial v}{\partial s} = \frac{V_m K_m}{(K_m + s)^2}
+   
+next we multiply by `s` and divide by `v`, this gives us, after some simplification, the following elasticity:
+
+.. math::   
+
+  \varepsilon^v_s = \frac{K_m}{K_m + s} 
+
+The substrate elasticity shows a range of values from zero at high substrate concentrations to one at low substrate concentrations. 
+When the enzyme is near saturation it is naturally unresponsive to further changes in substrate concentration, hence the elasticity is 
+near zero. 
+
+The reaction behaves as a zero-order reaction at this point. When the elasticity is close to one at low `S`, the reaction behaves with 
+first-order kinetics. 
+
+In addition, the reaction order changes depending on the substrate concentration.
+
+It is interesting to note that when `s = K_m`, the elasticity is equal to 0.5:
+
+.. math::
+
+  \text{when } s = K_m,\ \text{then }\ \varepsilon^v_s = 0.5
+
+The plots below illustrate how the elasticity relates to the slow of the rate curve (A) and  how the elasticity changes
+as a function of substrate concentration(B). In this case the plots were generated using a `K_m = 4` and `V_m = 1`.
+
+.. image:: ..\\images\\irrever_MM_elast_plot.png
+  :width: 600
+  :align: center
+
+We're not going to say much at this point about the case when the enzyme catalyzed reaction is reversible. That discussed in the intermediate topics section. 
+
+However, it is true that for a reversible enzyme catalyzed reaction, the elasticity with respect to the product will be negative. 
+
+* Substrate elasticity `\varepsilon^v_s > 0`
+* Product elasticity `\varepsilon^v_p < 0`
 
 
 

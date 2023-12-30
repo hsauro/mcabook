@@ -17,7 +17,7 @@
         gtag('config', 'G-PV60X1VW34');
     </script>
     
-    <title>4.3. Elasticities &#8212; MCA Book v0.1</title>
+    <title>4.3. Elasticities &#8212; MCA Book v0.12</title>
   
   
   
@@ -47,7 +47,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
   <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script src="../_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="../_static/documentation_options.js?v=4c7b1e55"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -139,7 +139,7 @@
   
   
   
-    <p class="title logo__title">MCA Book v0.1</p>
+    <p class="title logo__title">MCA Book v0.12</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -333,7 +333,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elasticity-of-mass-action-reactions">4.3.1. Elasticity of Mass-Action Reactions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elasticity-of-reversible-mass-action-reactions">4.3.2. Elasticity of Reversible Mass-Action Reactions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elasticities-of-reversible-mass-action-reactions">4.3.2. Elasticities of Reversible Mass-Action Reactions</a></li>
 </ul>
             </nav>
         </div>
@@ -389,7 +389,12 @@ information, this reaction will have five elasticities to describe its behavior:
      = \left( \frac{\partial \ln v}{\partial \ln s_i}\right)_{s_i, s_k, \;dots} \approx \frac{v \%}{s_i \%}\]</div>
 <p>There are a couple of things to note about this definition. First we use partial derivatives to indicate that
 when we change a variable such as <span class="math notranslate nohighlight">\(s_i\)</span>, we must <strong>keep all other potential variables constant.</strong></p>
-<p>The second point is that elasticities can be interpreted as a ratio of relative changes. This can be
+<p>A second point to make is that elasticities are dimensionless quantities.</p>
+<div class="admonition-notice admonition">
+<p class="admonition-title">Notice</p>
+<p>Due to the scaling, the elasticity is a dimensionless quantity.</p>
+</div>
+<p>The third point is that elasticities can be interpreted as a ratio of relative changes. This can be
 illustrated with a simple example. Let’s say that given a reaction <span class="math notranslate nohighlight">\(S_1 \rightarrow S_2\)</span>, we discover that the
 elasticity <span class="math notranslate nohighlight">\(\varepsilon^v_{s_1}\)</span> has a value of 3.0.</p>
 <p>This can be interpreted as follows by rearranging the approximation on the right as follows:</p>
@@ -440,8 +445,8 @@ way we did above. The derivative however is now:</p>
 <p>This is a general result in that the elasticity for an irreversible mass-action reaction of order <span class="math notranslate nohighlight">\(n\)</span>, also has an elasticity equal to <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>The elasticity can be seen as a more general way of describing the order of a reaction.</p>
 </section>
-<section id="elasticity-of-reversible-mass-action-reactions">
-<h2><span class="section-number">4.3.2. </span>Elasticity of Reversible Mass-Action Reactions<a class="headerlink" href="#elasticity-of-reversible-mass-action-reactions" title="Link to this heading">#</a></h2>
+<section id="elasticities-of-reversible-mass-action-reactions">
+<h2><span class="section-number">4.3.2. </span>Elasticities of Reversible Mass-Action Reactions<a class="headerlink" href="#elasticities-of-reversible-mass-action-reactions" title="Link to this heading">#</a></h2>
 <p>What about the elasticities for reversible mass-action reactions?</p>
 <p>While the elasticities for irreversible reactions are straight forward, reversible reactions are a little bit more complicated.</p>
 <p>Let’s consider the reversible reaction:</p>
@@ -462,6 +467,44 @@ Given a modulator of a reaction, we can say that in general:</p>
 <ul class="simple">
 <li><p>Positive elasticities mean: increases in the modulator <strong>increases</strong> the reaction rate</p></li>
 <li><p>Negative elasticities mean: increases in the modulator <strong>decreases</strong> the reaction rate</p></li>
+</ul>
+<p>Most reactions in a cell are catalyzed by enzymes. We should therefore consider what the elasticity of an enzyme catalyzed reaction might look like.</p>
+<p>The simplest rate law for a enzyme catalyzed reaction is the irreversible Michaelis-Menten rate law. This isn’t a rate law one might use to describe a reaction inside a cell
+because most reactions in a cell are not irreversible. Instead, we’d use the reversible version. For now, we’ll consider the irreversible form as that is the easiest to understand.
+The equation is given by:</p>
+<div class="math notranslate nohighlight">
+\[v = \frac{V_m s}{K_m + s}\]</div>
+<p>In this equation we have two constants, the <span class="math notranslate nohighlight">\(V_m\)</span> which represents the maximal rate the enzyme can catalyze the reaction and the <span class="math notranslate nohighlight">\(K_m\)</span>, often called the Michaelis constant is inversely related to
+how responsive the reaction rate is to the substrate concentration. If we plot the reaction rate as a function of substrate, as shown below, this will be become clearer.</p>
+<a class="reference internal image-reference" href="../_images/irrever_MM_plot.png"><img alt="../_images/irrever_MM_plot.png" class="align-center" src="../_images/irrever_MM_plot.png" style="width: 420px;" /></a>
+<p>The plot shows us that initially, the reaction rate appears to increase linearly as we increase the substrate concentration. However, as
+the substrate concentration increases, the rate of increase in the reaction rate slows now, ultimately reaching a plateau at the maximal rate. This
+is when the enzyme is becomes saturate with substrate so that there is no more free enzyme left to increase the rate further.</p>
+<p>Another way to interpreted the <span class="math notranslate nohighlight">\(K_m\)</span> is that it is the concentration of substrate that gives half the maximal velocity. That means a high <span class="math notranslate nohighlight">\(K_m\)</span> means we need a
+high substrate concentration to reach half the maximal velocity.</p>
+<p>The elasticity can be derived as before by differentiating the rate law and scaling. First, lets obtain the derivative:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial v}{\partial s} = \frac{V_m K_m}{(K_m + s)^2}\]</div>
+<p>next we multiply by <span class="math notranslate nohighlight">\(s\)</span> and divide by <span class="math notranslate nohighlight">\(v\)</span>, this gives us, after some simplification, the following elasticity:</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon^v_s = \frac{K_m}{K_m + s}\]</div>
+<p>The substrate elasticity shows a range of values from zero at high substrate concentrations to one at low substrate concentrations.
+When the enzyme is near saturation it is naturally unresponsive to further changes in substrate concentration, hence the elasticity is
+near zero.</p>
+<p>The reaction behaves as a zero-order reaction at this point. When the elasticity is close to one at low <span class="math notranslate nohighlight">\(S\)</span>, the reaction behaves with
+first-order kinetics.</p>
+<p>In addition, the reaction order changes depending on the substrate concentration.</p>
+<p>It is interesting to note that when <span class="math notranslate nohighlight">\(s = K_m\)</span>, the elasticity is equal to 0.5:</p>
+<div class="math notranslate nohighlight">
+\[\text{when } s = K_m,\ \text{then }\ \varepsilon^v_s = 0.5\]</div>
+<p>The plots below illustrate how the elasticity relates to the slow of the rate curve (A) and  how the elasticity changes
+as a function of substrate concentration(B). In this case the plots were generated using a <span class="math notranslate nohighlight">\(K_m = 4\)</span> and <span class="math notranslate nohighlight">\(V_m = 1\)</span>.</p>
+<a class="reference internal image-reference" href="../_images/irrever_MM_elast_plot.png"><img alt="../_images/irrever_MM_elast_plot.png" class="align-center" src="../_images/irrever_MM_elast_plot.png" style="width: 600px;" /></a>
+<p>We’re not going to say much at this point about the case when the enzyme catalyzed reaction is reversible. That discussed in the intermediate topics section.</p>
+<p>However, it is true that for a reversible enzyme catalyzed reaction, the elasticity with respect to the product will be negative.</p>
+<ul class="simple">
+<li><p>Substrate elasticity <span class="math notranslate nohighlight">\(\varepsilon^v_s &gt; 0\)</span></p></li>
+<li><p>Product elasticity <span class="math notranslate nohighlight">\(\varepsilon^v_p &lt; 0\)</span></p></li>
 </ul>
 </section>
 </section>
@@ -511,7 +554,7 @@ Given a modulator of a reaction, we can say that in general:</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elasticity-of-mass-action-reactions">4.3.1. Elasticity of Mass-Action Reactions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elasticity-of-reversible-mass-action-reactions">4.3.2. Elasticity of Reversible Mass-Action Reactions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elasticities-of-reversible-mass-action-reactions">4.3.2. Elasticities of Reversible Mass-Action Reactions</a></li>
 </ul>
   </nav></div>
 
