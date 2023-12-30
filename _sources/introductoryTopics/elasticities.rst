@@ -227,6 +227,8 @@ how responsive the reaction rate is to the substrate concentration. If we plot t
   :width: 420
   :align: center
   
+|
+  
 The plot shows us that initially, the reaction rate appears to increase linearly as we increase the substrate concentration. However, as 
 the substrate concentration increases, the rate of increase in the reaction rate slows now, ultimately reaching a plateau at the maximal rate. This
 is when the enzyme is becomes saturate with substrate so that there is no more free enzyme left to increase the rate further. 
@@ -267,6 +269,8 @@ as a function of substrate concentration(B). In this case the plots were generat
 .. image:: ..\\images\\irrever_MM_elast_plot.png
   :width: 600
   :align: center
+  
+|
 
 We're not going to say much at this point about the case when the enzyme catalyzed reaction is reversible. That discussed in the intermediate topics section. 
 
