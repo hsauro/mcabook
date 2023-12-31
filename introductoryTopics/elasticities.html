@@ -332,8 +332,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elasticity-of-mass-action-reactions">4.3.1. Elasticity of Mass-Action Reactions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elasticities-of-reversible-mass-action-reactions">4.3.2. Elasticities of Reversible Mass-Action Reactions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lots-of-elasticities">4.3.1. Lots of Elasticities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-more-formal-definition">4.3.2. A more formal definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elasticity-of-mass-action-reactions">4.3.3. Elasticity of Mass-Action Reactions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elasticities-of-reversible-mass-action-reactions">4.3.4. Elasticities of Reversible Mass-Action Reactions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elasticities-of-a-irreversible-enzyme-catalyzed-reaction">4.3.5. Elasticities of a Irreversible Enzyme Catalyzed Reaction</a></li>
 </ul>
             </nav>
         </div>
@@ -348,7 +351,7 @@ document.write(`
   <section id="elasticities">
 <h1><span class="section-number">4.3. </span>Elasticities<a class="headerlink" href="#elasticities" title="Link to this heading">#</a></h1>
 <p>Another way to study a biochemical pathway is to look at the individual enzyme catalyzed reaction steps. This
-has often been the domain of enzyme kineticists. For example, give the pathway shown
+has often been the domain of enzyme kinetics. For example, give the pathway shown
 below:</p>
 <div class="math notranslate nohighlight">
 \[X_o \stackrel{v_1}{\longrightarrow} S_1 \stackrel{v_2}{\longrightarrow} S_2 \stackrel{v_3}{\longrightarrow} X_1\]</div>
@@ -358,17 +361,34 @@ below:</p>
 <p>One way to study this reaction is to look at how the reaction rate <span class="math notranslate nohighlight">\(v_2\)</span> changes
 as a function of the substrate <span class="math notranslate nohighlight">\(S_1\)</span> and product <span class="math notranslate nohighlight">\(S_2\)</span>. For example, we could change
 the substrate by an amount <span class="math notranslate nohighlight">\(\delta s_1\)</span> and observe the change in rate <span class="math notranslate nohighlight">\(v_2\)</span>. This
-would given us an indication how much <span class="math notranslate nohighlight">\(S_1\)</span> influences the reaction rate. As
-before we can examine the relative change in reaction rate given a relative change
-in substrate. We can express this as follows:</p>
+would give us an indication how much <span class="math notranslate nohighlight">\(S_1\)</span> influences the reaction rate. As
+before we can examine the relative change in reaction rate: <span class="math notranslate nohighlight">\(\delta v_2/v_2\)</span>, given a relative change
+in substrate, <span class="math notranslate nohighlight">\(\delta s_1/s_1\)</span>. We can express this as follows:</p>
 <div class="math notranslate nohighlight">
-\[\varepsilon^v_s = \frac{\partial v_2}{\partial s_1} \frac{s_1}{v_2}\]</div>
-<p>We call this measure the <strong>elasticity</strong> coefficient. However changes in the
-product can also affect the reaction rate. This means there will also an elasticity
+\[\varepsilon^{v_2}_{s_1} \approx \frac{\delta v_2}{v_2}\Big/\frac{\delta s_1}{s_1}\]</div>
+<p>In the limit, as we make the delta change smaller and smaller, the equation turns into a derivative and can be written as follows:</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon^{v_2}_{s_1} = \frac{\partial v_2}{\partial s_1} \frac{s_1}{v_2}\]</div>
+<p>We call this measure the <strong>elasticity</strong> coefficient. The superscript on the epsilon symbol indicates what we are changing and the
+superscript what we are observing.</p>
+<p>Changes in the product can also affect the reaction rate. This means there will also an elasticity
 for the product <span class="math notranslate nohighlight">\(S_2\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\varepsilon^v_s = \frac{\partial v_2}{\partial s_2} \frac{s_2}{v_2}\]</div>
-<p>In fact, a chemical reaction will have as many elasticities as there are factors
+\[\varepsilon^{v_2}_{s_2} = \frac{\partial v_2}{\partial s_2} \frac{s_2}{v_2}\]</div>
+<p>You’ll sometimes see elasticities using just integers in the superscript and subscript, assuming the reaction rates and metabolite are also numbered.
+For example we might find <span class="math notranslate nohighlight">\(\varepsilon^{v_2}_{s_1}\)</span> written more simply as:</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon^{2}_{1}\]</div>
+<p>When considering elasticities of real enzymes you’ll often see the name of the reaction and species used in the super and subscripts. For example, if the
+reaction rate for glucose-6-phosphate isomerase is indicted with the symbol <span class="math notranslate nohighlight">\(\text{GPI}\)</span> and glucose-6-phosphate with <span class="math notranslate nohighlight">\(\text{gp6}\)</span>, the elasticity can be written as:</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon^{\text{GPI}}_{\text{g6p}}\]</div>
+<p>There is however no hard rule on the notation that is used, except for the use of the epsilon symbol. On a historical
+note, the word elasticity was borrowed from the use of the word same word in economics, where we see concepts such as the elasticity of demand. The Wikipedia page
+on <a class="reference external" href="https://en.wikipedia.org/wiki/Elasticity_(economics)">elasticities in economics</a> has a good discussion of elasticities sin economics.</p>
+<section id="lots-of-elasticities">
+<h2><span class="section-number">4.3.1. </span>Lots of Elasticities<a class="headerlink" href="#lots-of-elasticities" title="Link to this heading">#</a></h2>
+<p>A chemical reaction will have as many elasticities as there are factors
 as might influence the reaction rate. For an enzyme catalyzed reaction, there are
 a number of elasticities to consider other than the substrate(s) and product(s) elasticities.
 The most important of these are:</p>
@@ -376,16 +396,21 @@ The most important of these are:</p>
 <li><p>Enzyme concentration</p></li>
 <li><p>Allosteric regulators</p></li>
 </ul>
-<p>If a reaction has multiple substrates and products, each of these will have assigned elasticity.</p>
-<p>For example, the following BiUni enzyme catalyzed reaction which has two
+<p>If a reaction has multiple substrates and products, each of these will have an assigned elasticity.</p>
+<p>For example, the following bimolecular enzyme catalyzed reaction which has two
 substrates and one product:</p>
+<div class="math notranslate nohighlight">
+\[S_1 + S_2 \stackrel{v}{\longrightarrow} S_3\]</div>
 <p>We will also assume it is catalyzed by an enzyme <span class="math notranslate nohighlight">\(E\)</span> and regulated by an allosteric regulator, <span class="math notranslate nohighlight">\(R\)</span>. Given this
 information, this reaction will have five elasticities to describe its behavior:</p>
 <div class="math notranslate nohighlight">
 \[\varepsilon^v_{s_1},\ \varepsilon^v_{s_2},\ \varepsilon^v_{s_3},\ \varepsilon^v_{e},\ \varepsilon^v_{r}\]</div>
+</section>
+<section id="a-more-formal-definition">
+<h2><span class="section-number">4.3.2. </span>A more formal definition<a class="headerlink" href="#a-more-formal-definition" title="Link to this heading">#</a></h2>
 <p>More formally we define the elasticity as follows:</p>
-<div class="math notranslate nohighlight">
-\[\varepsilon^v_{x} = \left( \frac{\partial v}{\partial s_i} \frac{s_i}{v}\right)_{s_j, s_k, \ldots}
+<div class="math notranslate nohighlight" id="equation-eqn-elastdef">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-elastdef" title="Link to this equation">#</a></span>\[\varepsilon^v_{s_i} = \left( \frac{\partial v}{\partial s_i} \frac{s_i}{v}\right)_{s_j, s_k, \ldots}
      = \left( \frac{\partial \ln v}{\partial \ln s_i}\right)_{s_i, s_k, \;dots} \approx \frac{v \%}{s_i \%}\]</div>
 <p>There are a couple of things to note about this definition. First we use partial derivatives to indicate that
 when we change a variable such as <span class="math notranslate nohighlight">\(s_i\)</span>, we must <strong>keep all other potential variables constant.</strong></p>
@@ -395,60 +420,64 @@ when we change a variable such as <span class="math notranslate nohighlight">\(s
 <p>Due to the scaling, the elasticity is a dimensionless quantity.</p>
 </div>
 <p>The third point is that elasticities can be interpreted as a ratio of relative changes. This can be
-illustrated with a simple example. Let’s say that given a reaction <span class="math notranslate nohighlight">\(S_1 \rightarrow S_2\)</span>, we discover that the
-elasticity <span class="math notranslate nohighlight">\(\varepsilon^v_{s_1}\)</span> has a value of 3.0.</p>
-<p>This can be interpreted as follows by rearranging the approximation on the right as follows:</p>
+illustrated with a simple example. Let’s say that for a given reaction <span class="math notranslate nohighlight">\(S_1 \rightarrow S_2\)</span>, we discover that the
+elasticity <span class="math notranslate nohighlight">\(\varepsilon^v_{s_1}\)</span> has a value of 3.0. What does this tell us?</p>
+<p>This can be interpreted by rearranging the approximation on the right of equation <a class="reference internal" href="#equation-eqn-elastdef">(1)</a> as follows:</p>
 <div class="math notranslate nohighlight">
 \[v\% \approx \varepsilon^v_{s_i} . s_i \%\]</div>
 <p>Therefore, if we were to increase <span class="math notranslate nohighlight">\(S_1\)</span> by 5% we would be see, approximately, a 15% change in the reaction rate.</p>
-<p>The result is only approximate because strictly speaking an elasticity is only defined for infinitesimal changes since it’s a derivative.
-However, as long as we make only modest changes then the approximation is reasonably good.</p>
+<p>This result is only approximate because strictly speaking an elasticity is only defined for infinitesimal changes since it’s a derivative.
+However, as long as we make only modest changes the approximation is reasonably good.</p>
+</section>
 <section id="elasticity-of-mass-action-reactions">
-<h2><span class="section-number">4.3.1. </span>Elasticity of Mass-Action Reactions<a class="headerlink" href="#elasticity-of-mass-action-reactions" title="Link to this heading">#</a></h2>
-<p>Let’s look at what the elasticities of a simple mass-action reaction might look like.</p>
-<p>To keep things simple let’s consider the simplest rate law:</p>
+<h2><span class="section-number">4.3.3. </span>Elasticity of Mass-Action Reactions<a class="headerlink" href="#elasticity-of-mass-action-reactions" title="Link to this heading">#</a></h2>
+<p>Let’s look at what the elasticity of a simple mass-action reaction might look like.</p>
+<p>To keep things simple let’s consider the simplest reaction: <span class="math notranslate nohighlight">\(S \rightarrow\)</span>. For now we will ignore any product formation by
+assuming the reaction is irreversible.  The simplest rate law we can imagine is:</p>
 <div class="math notranslate nohighlight">
 \[v = k_1 s\]</div>
-<p>where <span class="math notranslate nohighlight">\(k_1\)</span> is the rate constant and <span class="math notranslate nohighlight">\(s\)</span> the concentration of reactant. This rate law could be used
-to model the simple reaction:</p>
-<div class="math notranslate nohighlight">
-\[s \stackrel{v}{\longrightarrow}\]</div>
-<p>For now we will ignore any product formation by assuming the reaction is irreversible.</p>
-<p>Our task is to find <span class="math notranslate nohighlight">\(\varepsilon^v_s\)</span>. Given the definition above, one way is to obtain the derivative then scale by the reaction rate and concentration of <span class="math notranslate nohighlight">\(s\)</span>.</p>
+<p>where <span class="math notranslate nohighlight">\(k_1\)</span> is the rate constant and <span class="math notranslate nohighlight">\(s\)</span> the concentration of the reactant.</p>
+<p>Our task is to find <span class="math notranslate nohighlight">\(\varepsilon^v_s\)</span>. Given the definition above, one way to derive the elasticity is to obtain the derivative then scale by the reaction rate and concentration of <span class="math notranslate nohighlight">\(s\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\varepsilon^v_s = \frac{\partial v}{\partial s} \frac{s}{v}\]</div>
 <p>The derivative is just:</p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial v}{\partial s} = \frac{\partial k_1 s}{\partial s} = k_1\]</div>
-<p>to get the elasticity we then multiply by <span class="math notranslate nohighlight">\(s\)</span> and divide by <span class="math notranslate nohighlight">\(v\)</span>:</p>
+\[\frac{\partial v}{\partial s} = \frac{\partial (k_1 s)}{\partial s} = k_1\]</div>
+<p>To obtain the elasticity we multiply by <span class="math notranslate nohighlight">\(s\)</span> and divide by <span class="math notranslate nohighlight">\(v\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\varepsilon^v_s = k_1 \frac{s}{v}\]</div>
 <p>but <span class="math notranslate nohighlight">\(v = k_1 s\)</span>, hence:</p>
 <div class="math notranslate nohighlight">
 \[\varepsilon^v_s = k_1 \frac{s}{k_1 s} = 1\]</div>
-<p>We therefore conclude that the elasticity for an irreversible mass-action single reactant reaction is one. In other words, changes
-in the reactant concentration <span class="math notranslate nohighlight">\(S\)</span>, yields a <strong>proportional change</strong> in the reaction rate.</p>
-<p>Chemists are already familiar with this, because they would refer to the reaction as a first-order reaction. In fact, in chemistry, the
-value of the order of a chemical reaction is referred to as the kinetic order.</p>
+<p>We therefore conclude that the elasticity for the reactant S is one. In other words, changes
+in the reactant concentration <span class="math notranslate nohighlight">\(S\)</span>, leads to a <strong>proportional change</strong> in the reaction rate.</p>
+<p>Chemists are already familiar with this, because they would refer to such reactions as first-order reactions. In chemistry, the
+value of the order of a chemical reaction is often referred to as the kinetic order.</p>
 <p>If a first-order reaction such as <span class="math notranslate nohighlight">\(S \rightarrow\)</span> gives an elasticity of 1, one about a dimerization reaction such as <span class="math notranslate nohighlight">\(S + S \rightarrow\)</span> ? A
 chemist would call this reaction a second-order reaction because the mass-action rate law for such reaction is often given as:</p>
 <div class="math notranslate nohighlight">
 \[v = k_1 s^2\]</div>
-<p>that is the reaction rate is a function of the square of the concentration. We can obtain the elasticity for this reaction in the same
+<p>that is the reaction rate is a function of the <strong>square</strong> of the concentration. We can obtain the elasticity for this reaction in the same
 way we did above. The derivative however is now:</p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial v}{\partial s} = \frac{\partial k_1 s^2}{\partial s} = 2 k_1 s\]</div>
+\[\frac{\partial v}{\partial s} = \frac{\partial (k_1 s^2)}{\partial s} = 2 k_1 s\]</div>
 <p>when we scale we get:</p>
 <div class="math notranslate nohighlight">
 \[\varepsilon^v_s = 2 k_1 s \frac{s}{v} = 2 k_1  s \frac{s}{k_1 s^2} = 2\]</div>
-<p>I think we can start to see a pattern as a second-order reaction gives an elasticity of two.</p>
-<p>This is a general result in that the elasticity for an irreversible mass-action reaction of order <span class="math notranslate nohighlight">\(n\)</span>, also has an elasticity equal to <span class="math notranslate nohighlight">\(n\)</span>.</p>
-<p>The elasticity can be seen as a more general way of describing the order of a reaction.</p>
+<p>I think we can start to see a pattern as a second-order reaction gives an elasticity of two. An nth-order irreversible mass-action reaction will have an elasticity equal to <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>The elasticity is a more general way of describing the order of a reaction.  Consider the reaction:</p>
+<div class="math notranslate nohighlight">
+\[3 S_1 + 2 S_2 \longrightarrow\]</div>
+<p>Based on the previous results we can write down the elasticities simply by inspection. In this case</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon^v_{S_1} = 3, \quad \varepsilon^v_{S_2} = 2\]</div>
+<p>This only works however if the reaction is irreversible and follows simple mass-action kinetics. The moment we introduce
+reversibility or enzyme catalysis, the elasticities become more complicated.</p>
 </section>
 <section id="elasticities-of-reversible-mass-action-reactions">
-<h2><span class="section-number">4.3.2. </span>Elasticities of Reversible Mass-Action Reactions<a class="headerlink" href="#elasticities-of-reversible-mass-action-reactions" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.3.4. </span>Elasticities of Reversible Mass-Action Reactions<a class="headerlink" href="#elasticities-of-reversible-mass-action-reactions" title="Link to this heading">#</a></h2>
 <p>What about the elasticities for reversible mass-action reactions?</p>
-<p>While the elasticities for irreversible reactions are straight forward, reversible reactions are a little bit more complicated.</p>
+<p>While the elasticities for irreversible reactions that follow mass-action kinetics are straight forward, reversible reactions are a little bit more complicated.</p>
 <p>Let’s consider the reversible reaction:</p>
 <div class="math notranslate nohighlight">
 \[S_1 \rightleftharpoons S_2\]</div>
@@ -468,6 +497,9 @@ Given a modulator of a reaction, we can say that in general:</p>
 <li><p>Positive elasticities mean: increases in the modulator <strong>increases</strong> the reaction rate</p></li>
 <li><p>Negative elasticities mean: increases in the modulator <strong>decreases</strong> the reaction rate</p></li>
 </ul>
+</section>
+<section id="elasticities-of-a-irreversible-enzyme-catalyzed-reaction">
+<h2><span class="section-number">4.3.5. </span>Elasticities of a Irreversible Enzyme Catalyzed Reaction<a class="headerlink" href="#elasticities-of-a-irreversible-enzyme-catalyzed-reaction" title="Link to this heading">#</a></h2>
 <p>Most reactions in a cell are catalyzed by enzymes. We should therefore consider what the elasticity of an enzyme catalyzed reaction might look like.</p>
 <p>The simplest rate law for a enzyme catalyzed reaction is the irreversible Michaelis-Menten rate law. This isn’t a rate law one might use to describe a reaction inside a cell
 because most reactions in a cell are not irreversible. Instead, we’d use the reversible version. For now, we’ll consider the irreversible form as that is the easiest to understand.
@@ -559,8 +591,11 @@ as a function of substrate concentration(B). In this case the plots were generat
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elasticity-of-mass-action-reactions">4.3.1. Elasticity of Mass-Action Reactions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elasticities-of-reversible-mass-action-reactions">4.3.2. Elasticities of Reversible Mass-Action Reactions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lots-of-elasticities">4.3.1. Lots of Elasticities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-more-formal-definition">4.3.2. A more formal definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elasticity-of-mass-action-reactions">4.3.3. Elasticity of Mass-Action Reactions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elasticities-of-reversible-mass-action-reactions">4.3.4. Elasticities of Reversible Mass-Action Reactions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elasticities-of-a-irreversible-enzyme-catalyzed-reaction">4.3.5. Elasticities of a Irreversible Enzyme Catalyzed Reaction</a></li>
 </ul>
   </nav></div>
 
