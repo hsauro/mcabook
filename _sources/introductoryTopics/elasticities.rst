@@ -213,7 +213,7 @@ Elasticities of Reversible Mass-Action Reactions
 
 What about the elasticities for reversible mass-action reactions?
 
-While the elasticities for irreversible reactions that follow mass-action kinetics are straight forward, reversible reactions are a little bit more complicated.
+While the elasticities for irreversible reactions that follow mass-action kinetics are straightforward, reversible reactions are a little bit more complicated.
 
 Let's consider the reversible reaction:
 
@@ -221,13 +221,14 @@ Let's consider the reversible reaction:
 
    S_1 \rightleftharpoons S_2
 
-The mass-action rate for this is:
+The mass-action rate law for this can be written as:
 
 .. math::
 
    v = k_1 s_1 - k_2 s_2
    
-As before we can derive the two elasticities:
+where `k_1` and `k_2` are the forward and reverse rate constants respectively. As before, we can derive the 
+two elasticities by differentiating the rate law, multiplying by the species, and dividing by the rate law:
  
 .. math::
  
@@ -262,8 +263,11 @@ The equation is given by:
    
    v = \frac{V_m s}{K_m + s}
    
-In this equation we have two constants, the `V_m` which represents the maximal rate the enzyme can catalyze the reaction and the `K_m`, often called the Michaelis constant is inversely related to 
-how responsive the reaction rate is to the substrate concentration. If we plot the reaction rate as a function of substrate, as shown below, this will be become clearer. 
+where `s` is the concentration of substrate. The equation also has two constants, `V_m` which represents the 
+maximal rate the enzyme can catalyze the reaction and the `K_m`, often called the Michaelis constant, which is 
+inversely related to 
+how responsive the reaction rate is to the substrate concentration. If we plot the reaction rate as a 
+function of substrate, as shown below, this will be become clearer. 
 
 .. image:: ..\\images\\irrever_MM_plot.png
   :width: 420
@@ -273,10 +277,10 @@ how responsive the reaction rate is to the substrate concentration. If we plot t
   
 The plot shows us that initially, the reaction rate appears to increase linearly as we increase the substrate concentration. However, as 
 the substrate concentration increases, the rate of increase in the reaction rate slows now, ultimately reaching a plateau at the maximal rate. This
-is when the enzyme is becomes saturate with substrate so that there is no more free enzyme left to increase the rate further. 
+is when the enzyme is becomes saturated with substrate so that there is no more free enzyme left to increase the rate further. 
 
-Another way to interpreted the `K_m` is that it is the concentration of substrate that gives half the maximal velocity. That means a high `K_m` means we need a 
-high substrate concentration to reach half the maximal velocity.
+Another way to interpret the `K_m` is that it is the concentration of substrate that gives half the maximal velocity. 
+A high `K_m` means we need a high substrate concentration to reach half the maximal velocity.
 
 The elasticity can be derived as before by differentiating the rate law and scaling. First, lets obtain the derivative:
 
@@ -305,7 +309,7 @@ It is interesting to note that when `s = K_m`, the elasticity is equal to 0.5:
 
   \text{when } s = K_m,\ \text{then }\ \varepsilon^v_s = 0.5
 
-The plots below illustrate how the elasticity relates to the slow of the rate curve (A) and  how the elasticity changes
+The plots below illustrate how the elasticity relates to the slope of the rate curve (A) and  how the elasticity changes
 as a function of substrate concentration(B). In this case the plots were generated using a `K_m = 4` and `V_m = 1`.
 
 .. image:: ..\\images\\irrever_MM_elast_plot.png
@@ -314,9 +318,11 @@ as a function of substrate concentration(B). In this case the plots were generat
   
 |
 
-We're not going to say much at this point about the case when the enzyme catalyzed reaction is reversible. That discussed in the intermediate topics section. 
+We're not going to say much at this point about the case when the enzyme catalyzed reaction is reversible. That 
+discussion will be had in the intermediate topics section. 
 
-However, it is true that for a reversible enzyme catalyzed reaction, the elasticity with respect to the product will be negative. 
+However, it is true that for a reversible enzyme catalyzed reaction, the elasticity with respect 
+to the product will be negative. 
 
 * Substrate elasticity `\varepsilon^v_s > 0`
 * Product elasticity `\varepsilon^v_p < 0`
